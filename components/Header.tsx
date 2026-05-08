@@ -67,7 +67,7 @@ export default function Header() {
                   : "text-white dark:text-encora-mint drop-shadow-lg"
                 }`}
             >
-              <Logo />
+              <Logo forceLight={!scrolled} />
             </Link>
           </div>
 
