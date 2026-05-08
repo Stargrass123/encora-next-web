@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { MODULES, ENVIRONMENTS } from "./data";
 import Link from "next/link";
@@ -7,112 +7,90 @@ import Link from "next/link";
 export default function SolutionsPage() {
   const sectionRef = useRef(null);
 
-
-
   return (
     <main className="min-h-screen text-foreground">
+
+      {/* HERO */}
       <section
         ref={sectionRef}
-        className="relative  mt-16 lg:mt-0 min-h-[70vh] sm:min-h-[80vh] lg:min-h-[100vh] flex items-center align-center overflow-hidden bg-card"
+        className="relative mt-16 lg:mt-0 min-h-[100vh] flex items-center overflow-hidden"
       >
-        {/* Background Image Layer */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 -z-10">
           <Image
             src="/images/solutions hero image.png"
             alt="Solutions background"
             fill
             priority
-            className="object-cover object-center md:object-[left_center]"
+            className="object-cover object-center"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/10" />
         </div>
-
-        {/* Overlay Layer */}
-        <div
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={{
-            background: "linear-gradient(to right, rgba(0,0,0,0.45), rgba(0,0,0,0.15))"
-          }}
-        />
-
-        {/* Content */}
-        <div className="container-encora relative z-10 px-4 sm:px-8 w-full h-full flex items-center">
-          <div className="w-full max-w-[720px] text-left mx-auto">
-            <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-white/90 mb-2">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-32">
+          <div className="max-w-xl space-y-6">
+            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400">
               Solutions
             </p>
-            {/* Headline */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-bold leading-tight text-white mb-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
               Smart return infrastructure
             </h1>
-
-            {/* Value props */}
-            <div className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl ">
-              Four building blocks that work together or stand alone—so you can
-              plug Encora into campuses, retail, packaging EPR, and events
-              without replatforming.
+            <p className="text-lg text-white/80 leading-relaxed">
+              Four building blocks that work together or stand alone — plug Encora into retail, campuses, packaging EPR, and events without replatforming.
+            </p>
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link
+                href="/contact-us"
+                className="rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-500 transition-colors"
+              >
+                Talk to us
+              </Link>
+              <Link
+                href="#building-blocks"
+                className="rounded-full border-2 border-white/60 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+              >
+                See the platform
+              </Link>
             </div>
           </div>
         </div>
-
-
       </section>
 
-      {/* SECTION 1 – Four building blocks */}
-      <section
-        aria-labelledby="modules-heading"
-        className="mx-auto w-full max-w-6xl px-4 lg:px-8 mt-16 md:mt-16 space-y-4"
-      >
-        <div className="space-y-3">
-          <h2
-            id="modules-heading"
-            className="text-center heading-lg mb-12 dark:text-white"
-          >
-            The four building blocks
-          </h2>
-          <p className="text-sm text-muted-foreground sm:text-base text-center">
-            Encora is built from four core components. You can start with one,
-            or deploy them together for end-to-end returns and traceability.
+      {/* FOUR BUILDING BLOCKS */}
+      <section id="building-blocks" className="mx-auto max-w-6xl px-6 mt-24">
+        <div className="text-center mb-12 space-y-3">
+          <h2 className="heading-lg dark:text-white">The four building blocks</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Start with one, or deploy them together for end-to-end returns and traceability.
           </p>
         </div>
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {MODULES.map((mod, index) => {
-            const href =
-              index === 0
-                ? "/bin"
-                : index === 1
-                  ? "/encora-reuse"
-                  : "/encora-access";
-
+            const href = index === 0 ? "/bin" : index === 1 ? "/encora-reuse" : "/encora-access";
             return (
               <article
                 key={mod.key}
-                className="flex h-full flex-col rounded-2xl border border-border text-card-foreground p-5 shadow-sm hover:shadow-md transition-shadow"
+                className="flex h-full flex-col rounded-2xl border border-border bg-card p-8 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-500/30 dark:border-emerald-500/40 bg-emerald-500/10 dark:bg-emerald-500/20 text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
+                <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
                   <mod.Icon />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground">
-                  {mod.title}{" "}
-                  <span className="ml-1 text-sm font-normal text-muted-foreground">
-                    · {mod.subtitle}
-                  </span>
+                <h3 className="text-lg font-semibold">
+                  {mod.title}
+                  <span className="ml-1.5 text-sm font-normal text-muted-foreground">· {mod.subtitle}</span>
                 </h3>
-                <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                <ul className="mt-4 space-y-2.5 text-base text-muted-foreground flex-1">
                   {mod.bullets.map((b) => (
-                    <li key={b} className="flex gap-2">
-                      <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
+                    <li key={b} className="flex gap-2.5">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0" />
                       <span>{b}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="mt-auto pt-4 text-xs">
+                <div className="mt-6">
                   <Link
                     href={href}
-                    className="inline-flex items-center gap-1 rounded-full border border-emerald-500/40 dark:border-emerald-500/50 px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-emerald-700 dark:text-emerald-300 hover:border-emerald-500 dark:hover:border-emerald-400 hover:text-emerald-600 dark:hover:text-emerald-200 transition-colors"
+                    className="inline-flex items-center gap-1 text-sm font-medium text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 transition-colors"
                   >
-                    See how this works in practice
-                    <span aria-hidden="true">↴</span>
+                    Learn more →
                   </Link>
                 </div>
               </article>
@@ -121,67 +99,75 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* Bridge text */}
-      <section className="mx-auto w-full max-w-6xl px-4 lg:px-8 mt-16 md:mt-24 lg:mt-[96px] space-y-4">
-        <h2 className="text-center heading-lg mb-12 dark:text-white">
-          Where it fits
-        </h2>
-        <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-6">
-          <p className="max-w-6xl text-center text-sm text-muted-foreground sm:text-base">
-            Each environment uses the same four building blocks in different
-            ways. Campuses pair Bins + Tags + Verify to manage reuse and
-            deposits, while EPR deployments lean on Verify + Connect to deliver
-            auditable data for regulators and stewardship schemes.
+      {/* WHERE IT FITS */}
+      <section className="mx-auto max-w-6xl px-6 mt-24">
+        <div className="text-center mb-12 space-y-3">
+          <h2 className="heading-lg dark:text-white">Where it fits</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Each environment uses the same four building blocks in different combinations — from campus reuse programs to retail fraud reduction to EPR compliance.
           </p>
-        </article>
-      </section>
-
-      {/* SECTION 2 – Environments with image cards */}
-      <section className="mx-auto w-full max-w-6xl px-4 lg:px-8 mt-16 md:mt-24 lg:mt-[96px] mb-16 md:mb-16 grid gap-8 lg:grid-cols-2">
-        {ENVIRONMENTS.map((env) => (
-          <article
-            key={env.key}
-            className="group relative overflow-hidden rounded-xl border border-border bg-card shadow-sm hover:shadow-md transition-all duration-300"
-          >
-            <div className="relative aspect-[16/9] w-full overflow-hidden">
-              <Image
-                src={env.imageSrc}
-                alt={env.imageAlt}
-                fill
-                className="object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
-            </div>
-
-            <div className="pointer-events-none absolute inset-0 flex items-end">
-              <div className="pointer-events-auto w-full p-6 sm:p-7">
-                <h3 className="text-xl font-semibold sm:text-2xl text-foreground">
-                  {env.title}
-                </h3>
-
-                <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
-                  {env.bullets.map((b) => (
-                    <li key={b} className="flex gap-2">
-                      <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-4">
-                  <a
-                    href={env.href}
-                    className="inline-flex items-center gap-2 rounded-full bg-emerald-600 dark:bg-emerald-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-md shadow-emerald-500/40 dark:shadow-emerald-500/50 hover:bg-emerald-500 dark:hover:bg-emerald-400 transition-colors"
-                  >
-                    {env.cta}
-                    <span aria-hidden="true">→</span>
-                  </a>
+        </div>
+        <div className="grid gap-8 lg:grid-cols-2">
+          {ENVIRONMENTS.map((env) => (
+            <article
+              key={env.key}
+              className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              <div className="relative aspect-[16/9] w-full overflow-hidden">
+                <Image
+                  src={env.imageSrc}
+                  alt={env.imageAlt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+              </div>
+              <div className="pointer-events-none absolute inset-0 flex items-end">
+                <div className="pointer-events-auto w-full p-6 sm:p-8">
+                  <h3 className="text-xl font-semibold sm:text-2xl">{env.title}</h3>
+                  <ul className="mt-3 space-y-2 text-base text-muted-foreground">
+                    {env.bullets.map((b) => (
+                      <li key={b} className="flex gap-2.5">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-5">
+                    <Link
+                      href={env.href}
+                      className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-emerald-500 transition-colors"
+                    >
+                      {env.cta} →
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </section>
+
+      {/* BOTTOM CTA */}
+      <section className="mx-auto max-w-6xl mt-24 mb-24 px-6">
+        <div className="rounded-3xl bg-emerald-600 text-white p-10 md:p-14 text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold">
+            Not sure where to start?
+          </h2>
+          <p className="mt-3 text-base text-emerald-100 max-w-lg mx-auto">
+            Tell us about your environment and we'll show you which building blocks fit.
+          </p>
+          <div className="mt-8">
+            <Link
+              href="/contact-us"
+              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
+            >
+              Talk to our team
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
