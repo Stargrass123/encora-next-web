@@ -5,7 +5,6 @@ import AISection from "components/AISection"
 import Solutions from "components/Solutions"
 import ResultsBand from "components/ResultsBand"
 import ClosingCTA from "components/ClosingCTA"
-import Footer from "components/Footer"
 import { StickyCTA } from "components/StickyCTA"
 
 export default function Page() {
@@ -17,7 +16,6 @@ export default function Page() {
       <Solutions />
       <ResultsBand />
       <ClosingCTA />
-      <Footer />
       <StickyCTA />
     </main>
   )
