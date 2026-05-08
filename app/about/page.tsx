@@ -24,32 +24,33 @@ export default function AboutPage() {
       {/* HERO — full-width banner */}
       <section
         ref={sectionRef}
-        className="relative mt-16 lg:mt-0 min-h-[85vh] flex items-center overflow-hidden"
+        className="relative mt-16 lg:mt-0 min-h-[100vh] flex items-center overflow-hidden"
       >
-        {/* Background image */}
+        {/* Background image — true full bleed */}
         <div className="absolute inset-0 -z-10">
           <Image
             src="/images/about-page-banner.jpeg"
             alt="Woman returning item at Encora kiosk in retail store"
             fill
-            className="object-cover object-center"
+            className="object-cover object-[60%_center]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
+          {/* Heavier gradient on left where text sits, fades toward kiosk */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/10" />
         </div>
 
-        {/* Content */}
-        <div className="container-encora relative z-10 px-6 sm:px-8 py-24">
-          <div className="max-w-2xl space-y-6">
+        {/* Content — pushed left, stays clear of the woman */}
+        <div className="relative z-10 w-full px-8 sm:px-16 lg:px-24 py-32">
+          <div className="max-w-sm space-y-6">
             <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400">
               About Encora
             </p>
-            <h1 className="leading-tight text-3xl sm:text-4xl lg:text-6xl font-bold text-white">
+            <h1 className="leading-tight text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               Built to verify <br />
               what comes back
             </h1>
-            <p className="text-lg text-white/80 leading-relaxed">
-              Encora is a hardware-software platform that captures proof of return at the moment it happens—so retailers, operators, and logistics partners can stop guessing and start trusting their data.
+            <p className="text-base text-white/80 leading-relaxed">
+              Encora captures proof of return at the moment it happens—so retailers and operators can stop guessing and start trusting their data.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
