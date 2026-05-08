@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { BinIcon, TagsIcon, VerifyIcon, ConnectIcon } from "@/components/icon";
 import { pushToDataLayer } from "lib/gtm";
 
 export default function HeroSection() {
@@ -11,14 +10,14 @@ export default function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.15,
         delayChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
       y: 0,
@@ -31,91 +30,97 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-32">
-      {/* Background Image */}
-      <div className="absolute inset-0 -z-10 opacity-40 dark:opacity-20">
+    <section className="relative min-h-[100vh] flex items-center overflow-hidden">
+      {/* Full bleed background image */}
+      <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/hero-revamp.png"
-          alt="Hero background"
+          src="/images/hero-revamp.jpg"
+          alt="Woman returning item to Encora RetAI kiosk in mall"
           fill
           priority
           className="object-cover object-center"
         />
+        {/* Dark gradient overlay on left side for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
       </div>
 
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 -right-40 w-80 h-80 rounded-full blur-3xl bg-encora-mint/20 animate-float-slow"></div>
-        <div className="absolute bottom-20 -left-40 w-96 h-96 rounded-full blur-3xl bg-encora-green/20 animate-float-medium"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl bg-primary/5 animate-pulse-slow"></div>
-      </div>
-
-      {/* Content */}
+      {/* Content — left aligned */}
       <motion.div
-        className="container-encora relative z-10 px-4 sm:px-8 text-center flex flex-col items-center"
+        className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-32"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Headline */}
-        <motion.div variants={itemVariants}>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
-            <span className="block leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-encora-green dark:text-encora-mint">
-              Smart returns. Verified.
-            </span>
-          </h1>
-        </motion.div>
+        <div className="max-w-xl">
+          {/* Eyebrow */}
+          <motion.p
+            variants={itemVariants}
+            className="text-encora-mint text-sm sm:text-base font-semibold uppercase tracking-widest mb-4"
+          >
+            Retail Return Verification
+          </motion.p>
 
-        {/* Value props */}
-        <motion.div
-          className="flex flex-wrap justify-center gap-6 mb-12 text-sm sm:text-base text-encora-green/70 dark:text-encora-mint"
-          variants={itemVariants}
-        >
-          {[
-            { icon: <BinIcon className="h-5 w-5" />, text: "Bins" },
-            { icon: <TagsIcon className="h-5 w-5" />, text: "Tags" },
-            { icon: <VerifyIcon className="h-5 w-5" />, text: "Verify" },
-            { icon: <ConnectIcon className="h-5 w-5" />, text: "Connect" },
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              className="flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          {/* Headline */}
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+          >
+            Verified Returns.{" "}
+            <span className="text-encora-mint">Zero Guesswork.</span>
+          </motion.h1>
+
+          {/* Subtext */}
+          <motion.p
+            variants={itemVariants}
+            className="text-white/80 text-lg sm:text-xl leading-relaxed mb-10"
+          >
+            Encora RetAI verifies every return at intake — reducing fraud,
+            cutting labor, and capturing data retailers can&apos;t get today.
+          </motion.p>
+
+          {/* Stats row */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap gap-8 mb-10"
+          >
+            {[
+              { stat: "$101B", label: "Annual return fraud" },
+              { stat: "$29", label: "Avg cost per return" },
+              { stat: "0%", label: "Verified at handoff today" },
+            ].map((item, i) => (
+              <div key={i}>
+                <div className="text-2xl font-bold text-encora-mint">{item.stat}</div>
+                <div className="text-white/60 text-sm">{item.label}</div>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap gap-4"
+          >
+            <Link
+              href="/contact-us"
+              onClick={() =>
+                pushToDataLayer({
+                  event: "hero_cta_click",
+                  button_text: "Talk to us",
+                  page_path: "/",
+                })
+              }
+              className="rounded-2xl px-6 py-3 font-semibold bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-200"
             >
-              <span className="text-encora-green dark:text-encora-mint text-lg">
-                {item.icon}
-              </span>
-              <span className="font-medium text-lg text-encora-green dark:text-encora-mint">
-                {item.text}
-              </span>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* CTA Buttons */}
-        <motion.div
-          className="mt-8 flex flex-wrap gap-3 justify-center mb-12"
-          variants={itemVariants}
-        >
-          <Link
-            href="/contact-us"
-            onClick={(e) => {
-              e.stopPropagation();
-              pushToDataLayer({ event: "hero_cta_click", button_text: "Talk to us", page_path: "/" });
-            }}
-            className="rounded-2xl px-5 py-3 font-medium bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-200"
-          >
-            Talk to us
-          </Link>
-
-          <Link
-            href="/bin"
-            className="inline-flex rounded-2xl px-5 py-3 font-medium items-center justify-center border-2 border-emerald-500 text-emerald-600  hover:bg-emerald-50 shadow-md hover:shadow-lg transition-all duration-200 dark:bg-transparent dark:border-white/20 dark:text-white dark:hover:bg-white/10"
-          >
-            See the Bin
-          </Link>
-        </motion.div>
+              Talk to us
+            </Link>
+            <Link
+              href="/bin"
+              className="inline-flex rounded-2xl px-6 py-3 font-semibold items-center justify-center border-2 border-white text-white hover:bg-white/10 transition-all duration-200"
+            >
+              See the Bin
+            </Link>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );
