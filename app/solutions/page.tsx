@@ -17,7 +17,7 @@ export default function SolutionsPage() {
       >
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/smartbin-hero-2.png"
+            src="/images/solutions-hero.jpeg"
             alt="Encora platform in retail environment"
             fill
             priority
