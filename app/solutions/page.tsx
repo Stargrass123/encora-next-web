@@ -17,8 +17,8 @@ export default function SolutionsPage() {
       >
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/solutions hero image.png"
-            alt="Solutions background"
+            src="/images/smartbin-hero-2.png"
+            alt="Encora platform in retail environment"
             fill
             priority
             className="object-cover object-center"
@@ -50,6 +50,25 @@ export default function SolutionsPage() {
                 See the platform
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* STATS */}
+      <section className="mx-auto max-w-6xl px-6 mt-24">
+        <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 md:p-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+            {[
+              { stat: "$101B", label: "Annual return fraud in the US", sub: "Most of it happens at the point of drop-off, before anyone checks." },
+              { stat: "$29", label: "Average cost per return", sub: "Retailers spend it on every return — almost none includes actual verification." },
+              { stat: "0%", label: "Verified at handoff today", sub: "No photo. No weight check. No record. Just a refund." },
+            ].map((item) => (
+              <div key={item.stat} className="space-y-2">
+                <p className="text-4xl md:text-5xl font-bold text-emerald-600 dark:text-emerald-400">{item.stat}</p>
+                <p className="text-base font-semibold text-foreground dark:text-white">{item.label}</p>
+                <p className="text-base text-muted-foreground leading-relaxed">{item.sub}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -86,10 +105,7 @@ export default function SolutionsPage() {
                   ))}
                 </ul>
                 <div className="mt-6">
-                  <Link
-                    href={href}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 transition-colors"
-                  >
+                  <Link href={href} className="inline-flex items-center gap-1 text-sm font-medium text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 transition-colors">
                     Learn more →
                   </Link>
                 </div>
@@ -99,12 +115,118 @@ export default function SolutionsPage() {
         </div>
       </section>
 
+      {/* HOW THE PIECES CONNECT */}
+      <section className="mx-auto max-w-6xl px-6 mt-24">
+        <div className="text-center mb-12 space-y-3">
+          <h2 className="heading-lg dark:text-white">How the pieces connect</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Every return flows through the same four layers — from physical intake to your existing systems.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-start">
+          {[
+            {
+              step: "01",
+              title: "Intake",
+              desc: "Customer scans QR or receipt at the kiosk. The bin identifies the return and opens the intake slot.",
+              icon: "⟲",
+            },
+            {
+              step: "02",
+              title: "Verify",
+              desc: "RetAI captures photo and weight at the moment of drop. Flags wrong items, empty boxes, and policy violations.",
+              icon: "✓",
+            },
+            {
+              step: "03",
+              title: "Record",
+              desc: "A tamper-evident event is logged per transaction — item, timestamp, location, weight, and photo.",
+              icon: "⧉",
+            },
+            {
+              step: "04",
+              title: "Route",
+              desc: "Structured data pushes to your POS, OMS, or logistics system via webhook. Refund holds release automatically on pass.",
+              icon: "→",
+            },
+          ].map((item, i) => (
+            <div key={i} className="relative">
+              {/* Connector line */}
+              {i < 3 && (
+                <div className="hidden md:block absolute top-8 left-[calc(100%-1rem)] w-8 h-px bg-emerald-500/40 z-10" />
+              )}
+              <div className="rounded-2xl border border-border bg-card p-6 space-y-3 h-full">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{item.step}</span>
+                  <span className="text-xl text-emerald-600 dark:text-emerald-400">{item.icon}</span>
+                </div>
+                <h3 className="text-base font-semibold">{item.title}</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* WHO IT'S FOR */}
+      <section className="mx-auto max-w-6xl px-6 mt-24">
+        <div className="text-center mb-12 space-y-3">
+          <h2 className="heading-lg dark:text-white">Who it's for</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Encora is designed for the operators, retailers, and logistics partners who own the return problem.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            {
+              title: "Apparel & specialty retailers",
+              bullets: [
+                "Reduce $29/return processing cost",
+                "Cut fraud with verified intake before refund",
+                "Self-serve kiosks free up staff for selling",
+                "Data that routes items to restock, resale, or RTV",
+              ],
+            },
+            {
+              title: "Mall & hub operators",
+              bullets: [
+                "Shared return infrastructure across multiple tenants",
+                "Drive foot traffic with convenient drop-off locations",
+                "Real-time fill-level monitoring across all units",
+                "Revenue opportunity from returns-as-a-service",
+              ],
+            },
+            {
+              title: "Logistics & 3PL partners",
+              bullets: [
+                "Verified intake data before items reach the DC",
+                "Reduce surprises in the returns processing queue",
+                "Photo and weight records for dispute resolution",
+                "API integration with your WMS and OMS",
+              ],
+            },
+          ].map((col, i) => (
+            <div key={i} className="rounded-2xl border border-border bg-card p-8 space-y-5">
+              <h3 className="text-lg font-semibold">{col.title}</h3>
+              <ul className="space-y-3">
+                {col.bullets.map((b, j) => (
+                  <li key={j} className="flex gap-3 text-base text-muted-foreground">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0 mt-2"></span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* WHERE IT FITS */}
       <section className="mx-auto max-w-6xl px-6 mt-24">
         <div className="text-center mb-12 space-y-3">
           <h2 className="heading-lg dark:text-white">Where it fits</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Each environment uses the same four building blocks in different combinations — from campus reuse programs to retail fraud reduction to EPR compliance.
+            The same platform, deployed across four different environments.
           </p>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
@@ -157,12 +279,18 @@ export default function SolutionsPage() {
           <p className="mt-3 text-base text-emerald-100 max-w-lg mx-auto">
             Tell us about your environment and we'll show you which building blocks fit.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact-us"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
             >
               Talk to our team
+            </Link>
+            <Link
+              href="/bin"
+              className="rounded-full border-2 border-white/60 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+            >
+              See the hardware
             </Link>
           </div>
         </div>
