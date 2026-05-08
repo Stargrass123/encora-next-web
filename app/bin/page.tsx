@@ -20,9 +20,9 @@ export default function BinPage() {
                         className="object-cover object-center"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/10" />
+                    <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/55 to-black/10" />
                 </div>
-                <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-32">
+                <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-32 flex justify-end">
                     <div className="max-w-xl space-y-6">
                         <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400">
                             Smart Return Bin
