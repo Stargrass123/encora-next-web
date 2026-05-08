@@ -39,17 +39,17 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/10" />
         </div>
 
-        {/* Content — pushed left, stays clear of the woman */}
-        <div className="relative z-10 w-full px-8 sm:px-16 lg:px-24 py-32">
-          <div className="max-w-sm space-y-6">
+        {/* Content — matches main page hero positioning */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-32">
+          <div className="max-w-xl space-y-6">
             <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400">
               About Encora
             </p>
-            <h1 className="leading-tight text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+            <h1 className="leading-tight text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
               Built to verify <br />
               what comes back
             </h1>
-            <p className="text-base text-white/80 leading-relaxed">
+            <p className="text-lg text-white/80 leading-relaxed">
               Encora captures proof of return at the moment it happens—so retailers and operators can stop guessing and start trusting their data.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
