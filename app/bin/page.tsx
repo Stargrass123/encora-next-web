@@ -158,35 +158,45 @@ export default function BinPage() {
             {/* OPERATORS SECTION */}
             <section id="operators" className="mx-auto max-w-6xl w-full mt-24 px-6">
                 <div className="border-t border-border pt-24">
-                    <div className="mb-12">
-                        <span className="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider rounded-full mb-4 border border-emerald-500/20">
-                            For Operators
-                        </span>
-                        <h2 className="heading-lg mb-6 dark:text-white">Active returns infrastructure</h2>
-                        <div className="space-y-4 text-base text-muted-foreground leading-relaxed max-w-3xl">
-                            <p className="font-semibold text-lg text-foreground dark:text-white">More than just a drop-off point.</p>
-                            <p>Traditional return lockers are passive — they store items until someone manually retrieves them. The Encora Smart Return Bin is an <strong className="text-foreground dark:text-white">active participant</strong> in your reverse logistics network, initiating verification and routing the moment a return is made.</p>
-                            <p>By reading encoded tags and communicating with our verification cloud, the bin ensures every return is legitimate, tracked, and ready for its next step — resale, recycling, or restocking.</p>
+
+                    {/* Header row */}
+                    <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start mb-16">
+                        <div>
+                            <span className="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider rounded-full mb-4 border border-emerald-500/20">
+                                For Operators
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-5 dark:text-white">
+                                Active returns infrastructure
+                            </h2>
+                            <p className="text-base text-muted-foreground leading-relaxed">
+                                Traditional return lockers are passive — they store items until someone manually retrieves them. The Encora Smart Return Bin is an <strong className="text-foreground dark:text-white">active participant</strong> in your reverse logistics network, initiating verification and routing the moment a return is made.
+                            </p>
                         </div>
-                        <div className="flex flex-wrap gap-4 mt-8">
-                            <Link
-                                href="/contact-us"
-                                className="rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-emerald-500 transition-colors"
-                            >
-                                Request a pilot
-                            </Link>
-                            <Link
-                                href="/contact-us"
-                                className="rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-muted-foreground hover:border-foreground/50 hover:text-foreground transition-colors"
-                            >
-                                Contact us
-                            </Link>
+                        <div className="flex flex-col justify-between h-full gap-6">
+                            <p className="text-base text-muted-foreground leading-relaxed">
+                                By reading encoded tags and communicating with our verification cloud, the bin ensures every return is legitimate, tracked, and ready for its next step — resale, recycling, or restocking.
+                            </p>
+                            <div className="flex flex-wrap gap-4">
+                                <Link
+                                    href="/contact-us"
+                                    className="rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-emerald-500 transition-colors"
+                                >
+                                    Request a pilot
+                                </Link>
+                                <Link
+                                    href="/contact-us"
+                                    className="rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-muted-foreground hover:border-foreground/50 hover:text-foreground transition-colors"
+                                >
+                                    Contact us
+                                </Link>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-12 lg:gap-16 mt-16">
-                        <div className="space-y-6">
-                            <h3 className="text-xl font-bold dark:text-white">Core capabilities</h3>
+                    {/* Capabilities + Specs */}
+                    <div className="grid md:grid-cols-2 gap-12 lg:gap-16 pt-12 border-t border-border">
+                        <div className="space-y-8">
+                            <h3 className="text-lg font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Core capabilities</h3>
                             <ul className="space-y-6">
                                 {[
                                     { title: "Real-time verification", desc: "Validates returned items against order records at the moment of drop-off." },
@@ -195,20 +205,20 @@ export default function BinPage() {
                                     { title: "Data capture", desc: "Logs return volume, timing, item condition, and exception flags per transaction." },
                                 ].map((item, i) => (
                                     <li key={i} className="flex gap-4">
-                                        <div className="w-6 h-6 rounded-full bg-emerald-500/10 flex-shrink-0 flex items-center justify-center text-emerald-600 mt-0.5">
-                                            <CheckCircle className="w-4 h-4" />
+                                        <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex-shrink-0 flex items-center justify-center text-emerald-600 mt-1">
+                                            <CheckCircle className="w-3.5 h-3.5" />
                                         </div>
                                         <div>
-                                            <h4 className="font-semibold text-base">{item.title}</h4>
-                                            <p className="text-base text-muted-foreground mt-1">{item.desc}</p>
+                                            <h4 className="font-semibold text-base dark:text-white">{item.title}</h4>
+                                            <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{item.desc}</p>
                                         </div>
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
-                        <div className="space-y-6">
-                            <h3 className="text-xl font-bold dark:text-white">Technical specs</h3>
+                        <div className="space-y-8">
+                            <h3 className="text-lg font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Technical specs</h3>
                             <div className="grid sm:grid-cols-2 gap-4">
                                 {[
                                     { icon: <BinIcon />, title: "High capacity", desc: "Compact footprint, optimized for store floor deployment." },
@@ -220,7 +230,7 @@ export default function BinPage() {
                                         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
                                             <div className="w-4 h-4 flex items-center justify-center">{item.icon}</div>
                                         </div>
-                                        <h4 className="text-sm font-semibold dark:text-white">{item.title}</h4>
+                                        <h4 className="font-semibold text-sm dark:text-white">{item.title}</h4>
                                         <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                                     </div>
                                 ))}
