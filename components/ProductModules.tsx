@@ -34,7 +34,7 @@ const ProductModules = () => {
 
   return (
     <section className="section-spacing">
-      <div className="container-encora space-y-4">
+      <div className="container-encora space-y-16">
         <div className="text-center">
           <h2 className="heading-lg mb-4 dark:text-white">
             How It Works
@@ -44,7 +44,7 @@ const ProductModules = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -63,7 +63,7 @@ const ProductModules = () => {
               <h3 className="text-xl font-bold text-encora-green dark:text-white mb-3">
                 {step.title}
               </h3>
-              <p className="text-sm font-normal text-muted-foreground">
+              <p className="text-base font-normal text-muted-foreground">
                 {step.description}
               </p>
             </div>

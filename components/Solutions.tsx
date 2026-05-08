@@ -22,7 +22,7 @@ const Solutions = () => {
 
   return (
     <section className="section-spacing border-b border-[#E0E0E0] dark:border-encora-mint/30">
-      <div className="container-encora space-y-4">
+      <div className="container-encora space-y-16">
         <div className="text-center">
           <h2 className="heading-lg dark:text-white">
             Built for the Whole Returns Ecosystem

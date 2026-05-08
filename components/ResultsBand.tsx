@@ -8,7 +8,7 @@ const ResultsBand = () => {
 
   return (
     <section className="section-spacing">
-      <div className="container-encora space-y-4">
+      <div className="container-encora space-y-16">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 dark:text-white">
             What Retailers Gain

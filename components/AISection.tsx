@@ -27,7 +27,7 @@ const AISection = () => {
 
   return (
     <section className="section-spacing border-t border-b border-[#E0E0E0] dark:border-encora-mint/30">
-      <div className="container-encora space-y-4">
+      <div className="container-encora space-y-16">
         <div className="text-center">
           <h2 className="heading-lg dark:text-white">The Missing Layer</h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-6xl mx-auto dark:text-white/80">
