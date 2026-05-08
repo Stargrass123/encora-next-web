@@ -1,415 +1,311 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import {
-    CheckCircle,
-    Smartphone,
-    MapPin,
-    Zap,
-    Scan,
-    ArrowDown,
-} from "lucide-react";
+import { CheckCircle, Smartphone, MapPin, Zap } from "lucide-react";
 import React from "react";
 import { BinIcon, TagsIcon, VerifyIcon, ConnectIcon } from "@/components/icon";
 import { sendGTMEvent } from "@/utils/gtm";
-
-// Small client image component with fallback
-function ImageWithFallback({
-    src,
-    alt = "",
-    className = "",
-    placeholder = "/images/placeholder-encora.png",
-}: { src: string, alt?: string, className?: string, placeholder?: string }) {
-    const [imgSrc, setImgSrc] = React.useState(src);
-    return (
-        // kept as <img> intentionally so fallback onError works in client
-        <img
-            src={imgSrc}
-            alt={alt}
-            className={className}
-            onError={() => imgSrc !== placeholder && setImgSrc(placeholder)}
-        />
-    );
-}
 
 export default function BinPage() {
     return (
         <main className="flex flex-col w-full overflow-hidden text-foreground">
 
-            {/* ================= HERO ================= */}
-            <section className="relative flex min-h-[100vh] w-full items-center">
-                {/* Background Image */}
-                <div className="absolute inset-0 z-0">
+            {/* HERO */}
+            <section className="relative flex min-h-[100vh] w-full items-center overflow-hidden">
+                <div className="absolute inset-0 -z-10">
                     <Image
-                        src="/images/Smart bin HERO Image.png"
-                        alt="Smart Return Bin"
+                        src="/images/smartbin-hero.png"
+                        alt="Encora Smart Return Bin in retail environment"
                         fill
                         className="object-cover object-center"
                         priority
                     />
-                    {/* Gradient overlay to ensure text readability against the image */}
-                    <div className="absolute inset-0 bg-black/20 "></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/10" />
                 </div>
-
-                {/* Text Overlay */}
-                <div className="relative z-10 w-full px-6 py-12 lg:px-12 xl:px-20 flex flex-col items-center justify-center">
-
-                    <div className="w-full max-w-[45rem] flex flex-col items-center text-center">
-                        <p className="w-full text-left text-sm font-semibold uppercase tracking-widest text-emerald-400 mb-4">
+                <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-32">
+                    <div className="max-w-xl space-y-6">
+                        <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400">
                             Smart Return Bin
                         </p>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-white mb-6">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white">
                             The Smart Return Bin
                         </h1>
-                        <p className="text-base sm:text-lg md:text-xl text-emerald-50/90 leading-relaxed max-w-xl mb-10">
-                            Contactless, verified returns — with on-bin guidance.
+                        <p className="text-lg text-white/80 leading-relaxed">
+                            Contactless, verified returns — with on-bin guidance and instant confirmation.
                         </p>
-
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <div className="flex flex-wrap gap-4 pt-2">
                             <Link
                                 href="#how-it-works"
-                                className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-900/20 hover:bg-emerald-500 transition-all hover:scale-105"
+                                className="rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-500 transition-colors"
                             >
                                 How it works
                             </Link>
                             <Link
-                                href="/resources/spec-sheet.pdf"
-                                target="_blank"
-                                onClick={() => sendGTMEvent({ event: "pdf_download", file: "spec-sheet.pdf" })}
-                                className="inline-flex items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-900/50 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-800/50 hover:border-emerald-400/50 transition-all hover:scale-105"
+                                href="/contact-us"
+                                className="rounded-full border-2 border-white/60 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
                             >
-                                Download Spec Sheet
+                                Talk to us
                             </Link>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* ================= HOW IT WORKS (CONSUMER) ================= */}
-            <section id="how-it-works" className="mt-16 md:mt-24 lg:mt-[4rem]">
-                <div className="container-encora px-4">
-                    <div className="text-center mb-16 space-y-4">
-                        <h2 className="heading-lg dark:text-white">
-                            How RetAI works in your store.
-                        </h2>
-                        <p className="mt-2 text-lg text-encora-green dark:text-encora-mint font-medium">
-                            A simple flow that works alongside your existing POS—no rip-and-replace.
-                        </p>
+            {/* HOW IT WORKS */}
+            <section id="how-it-works" className="mx-auto max-w-6xl w-full mt-24 px-6">
+                <div className="text-center mb-12 space-y-3">
+                    <h2 className="heading-lg dark:text-white">How it works</h2>
+                    <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+                        A simple flow that works alongside your existing POS — no rip-and-replace.
+                    </p>
+                </div>
+                <div className="grid gap-6 md:grid-cols-3">
+                    {[
+                        {
+                            step: "01",
+                            icon: <BinIcon />,
+                            title: "Scan your item",
+                            body: "Scan or present your receipt to begin. The bin identifies your return and confirms it's expected.",
+                        },
+                        {
+                            step: "02",
+                            icon: <VerifyIcon />,
+                            title: "Follow the screen",
+                            body: "Clear on-bin guidance walks you through each step. The intake door opens automatically when ready.",
+                        },
+                        {
+                            step: "03",
+                            icon: <ConnectIcon />,
+                            title: "Drop and go",
+                            body: "Secure drop-off with instant confirmation. RetAI captures photo and weight data at the moment of deposit.",
+                        },
+                    ].map((step, i) => (
+                        <article key={i} className="flex flex-col gap-4 rounded-2xl border border-border bg-card p-8">
+                            <div className="flex items-center gap-3">
+                                <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{step.step}</span>
+                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                                    {step.icon}
+                                </div>
+                            </div>
+                            <h3 className="text-lg font-bold">{step.title}</h3>
+                            <p className="text-base text-muted-foreground leading-relaxed">{step.body}</p>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            {/* BIN FEATURE IMAGE */}
+            <section className="mx-auto max-w-6xl w-full mt-24 px-6">
+                <div className="text-center mb-12 space-y-3">
+                    <h2 className="heading-lg dark:text-white">Built for quick, everyday returns</h2>
+                    <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+                        Designed for high-traffic retail floors, mall corridors, and logistics hubs.
+                    </p>
+                </div>
+                <div className="relative max-w-4xl mx-auto">
+                    <div className="relative aspect-[4/3] flex items-center justify-center">
+                        <Image
+                            src="/images/smartbin-feature.png"
+                            alt="Encora Smart Return Bin features"
+                            fill
+                            className="object-contain z-10"
+                        />
+
+                        {/* Desktop callout pointers */}
+                        <div className="hidden md:block absolute inset-0 z-20">
+                            <div className="absolute top-[25%] left-0 w-[30%] flex items-center justify-end">
+                                <div className="text-right pr-4">
+                                    <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-3 rounded-xl shadow-sm">
+                                        <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm leading-tight">Guided instructions</h4>
+                                        <p className="text-xs text-muted-foreground mt-1">Touchscreen display at eye level</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="w-16 h-px bg-encora-green"></div>
+                                    <div className="w-2 h-2 bg-encora-green rounded-full"></div>
+                                </div>
+                            </div>
+
+                            <div className="absolute top-[20%] right-0 w-[30%] flex items-center justify-start flex-row-reverse">
+                                <div className="text-left pl-4">
+                                    <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-3 rounded-xl shadow-sm">
+                                        <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm leading-tight">Verified intake</h4>
+                                        <p className="text-xs text-muted-foreground mt-1">Camera + weight sensor at drop</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center flex-row-reverse">
+                                    <div className="w-16 h-px bg-encora-green"></div>
+                                    <div className="w-2 h-2 bg-encora-green rounded-full"></div>
+                                </div>
+                            </div>
+
+                            <div className="absolute top-[62%] right-0 w-[30%] flex items-center justify-start flex-row-reverse">
+                                <div className="text-left pl-4">
+                                    <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-3 rounded-xl shadow-sm">
+                                        <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm leading-tight">Secure storage</h4>
+                                        <p className="text-xs text-muted-foreground mt-1">Auto-locks between drops</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center flex-row-reverse">
+                                    <div className="w-16 h-px bg-encora-green"></div>
+                                    <div className="w-2 h-2 bg-encora-green rounded-full"></div>
+                                </div>
+                            </div>
+
+                            <div className="absolute top-[62%] left-0 w-[30%] flex items-center justify-end">
+                                <div className="text-right pr-4">
+                                    <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-3 rounded-xl shadow-sm">
+                                        <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm leading-tight">Single intake slot</h4>
+                                        <p className="text-xs text-muted-foreground mt-1">Handles apparel and accessories</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="w-16 h-px bg-encora-green"></div>
+                                    <div className="w-2 h-2 bg-encora-green rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="grid gap-6 md:grid-cols-3">
+                    {/* Mobile fallback */}
+                    <div className="md:hidden grid grid-cols-2 gap-4 mt-8">
                         {[
-                            {
-                                icon: <BinIcon />,
-                                title: "Identify your return",
-                                body: "Scan or present your item to begin the return.",
-                            },
-                            {
-                                icon: <div className="text-2xl font-bold font-mono">2</div>, // Placeholder or specific icon if available, using number/text for now or revert to existing icon
-                                title: "Follow the screen",
-                                body: "Clear, on-bin guidance at every step.",
-                                iconComponent: <VerifyIcon />
-                            },
-                            {
-                                icon: <ArrowDown />,
-                                title: "Drop",
-                                body: "Secure drop-off with instant confirmation.",
-                                iconComponent: <ConnectIcon />
-                            },
-                        ].map((step, i) => (
-                            <article
-                                key={i}
-                                className="flex flex-col gap-4 rounded-2xl border bg-card p-6 h-full"
-                            >
-                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
-                                    {step.iconComponent || step.icon}
-                                </div>
-                                <div className="space-y-3">
-                                    <h3 className="text-lg font-bold leading-tight">{step.title}</h3>
-                                    <p className="text-base text-foreground/90 leading-relaxed font-medium">
-                                        {step.body}
-                                    </p>
-                                </div>
-                            </article>
+                            { title: "Guided instructions", desc: "Touchscreen display at eye level" },
+                            { title: "Verified intake", desc: "Camera + weight sensor at drop" },
+                            { title: "Secure storage", desc: "Auto-locks between drops" },
+                            { title: "Single intake slot", desc: "Handles apparel and accessories" },
+                        ].map((item, i) => (
+                            <div key={i} className="bg-card p-4 rounded-xl border">
+                                <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm">{item.title}</h4>
+                                <p className="text-xs text-muted-foreground mt-1">{item.desc}</p>
+                            </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* ================= BIN FEATURES ================= */}
-            <section className="mt-16 md:mt-24 lg:mt-32">
-                <div className="container-encora px-4">
-                    <h2 className="heading-lg text-center mb-16 dark:text-white">
-                        Built for quick, everyday returns
-                    </h2>
-
-                    <div className="relative max-w-5xl mx-auto">
-                        <div className="relative aspect-[4/3] flex items-center justify-center">
-                            <Image
-                                src="/images/bin-cutout.png"
-                                alt="Smart Return Bin"
-                                fill
-                                className="object-contain z-10"
-                            />
-
-                            {/* Desktop pointers */}
-                            <div className="hidden md:block absolute inset-0 z-20">
-                                {/* Pointer 1: Guided Instructions (Left, Top) -> Screen */}
-                                <div className="absolute top-[28%] left-0 w-[30%] flex items-center justify-end group">
-                                    <div className="text-right pr-4">
-                                        <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-3 rounded-lg shadow-sm">
-                                            <h4 className="font-bold text-encora-green dark:text-encora-mint text-lg leading-tight">Guided instructions</h4>
-                                            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">Scan or match order here</p>
-                                        </div>
-                                    </div>
-                                    <div className="relative flex items-center">
-                                        <div className="w-12 lg:w-20 h-px bg-encora-green"></div>
-                                        <div className="w-1.5 h-1.5 bg-encora-green rounded-full"></div>
-                                    </div>
-                                </div>
-
-                                {/* Pointer 2: Quick Drop (Right, Top) -> Induction */}
-                                <div className="absolute top-[22%] right-0 w-[30%] flex items-center justify-start flex-row-reverse group">
-                                    <div className="text-left pl-4">
-                                        <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-3 rounded-lg shadow-sm">
-                                            <h4 className="font-bold text-encora-green dark:text-encora-mint text-lg leading-tight">Quick drop-off</h4>
-                                            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">Induction slot opens automatically</p>
-                                        </div>
-                                    </div>
-                                    <div className="relative flex items-center flex-row-reverse">
-                                        <div className="w-12 lg:w-20 h-px bg-encora-green"></div>
-                                        <div className="w-1.5 h-1.5 bg-encora-green rounded-full"></div>
-                                    </div>
-                                </div>
-
-                                {/* Pointer 3: Secure Locking Doors (Right, Bottom) -> Door Seam */}
-                                <div className="absolute top-[60%] right-0 w-[30%] flex items-center justify-start flex-row-reverse group">
-                                    <div className="text-left pl-4">
-                                        <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-3 rounded-lg shadow-sm">
-                                            <h4 className="font-bold text-encora-green dark:text-encora-mint text-lg leading-tight">Secure locking doors</h4>
-                                            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">Automatically locks between drops</p>
-                                        </div>
-                                    </div>
-                                    <div className="relative flex items-center flex-row-reverse">
-                                        <div className="w-16 lg:w-24 h-px bg-encora-green"></div>
-                                        <div className="w-1.5 h-1.5 bg-encora-green rounded-full"></div>
-                                    </div>
-                                </div>
-
-                                {/* Pointer 4: Multiple Intake Slots (Left, Bottom) -> Slot area */}
-                                <div className="absolute top-[65%] left-0 w-[30%] flex items-center justify-end group">
-                                    <div className="text-right pr-4">
-                                        <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-3 rounded-lg shadow-sm">
-                                            <h4 className="font-bold text-encora-green dark:text-encora-mint text-lg leading-tight">Multiple intake slots</h4>
-                                            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">For various item sizes</p>
-                                        </div>
-                                    </div>
-                                    <div className="relative flex items-center">
-                                        <div className="w-12 lg:w-20 h-px bg-encora-green"></div>
-                                        <div className="w-1.5 h-1.5 bg-encora-green rounded-full"></div>
-                                    </div>
-                                </div>
+            {/* WHY IT'S SMARTER */}
+            <section className="mx-auto max-w-6xl w-full mt-24 px-6">
+                <h2 className="heading-lg text-center mb-12 dark:text-white">Why it's smarter</h2>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    {[
+                        { icon: CheckCircle, title: "Instant confirmation", desc: "Customer knows the drop-off worked before they walk away." },
+                        { icon: Smartphone, title: "No staff required", desc: "Fully self-service — frees up your team for higher-value work." },
+                        { icon: MapPin, title: "Built for traffic", desc: "Compact footprint designed for high-volume retail and mall locations." },
+                        { icon: Zap, title: "Faster recovery", desc: "Verified returns move faster through the reverse logistics chain." },
+                    ].map((c, i) => (
+                        <article key={i} className="rounded-2xl border border-border bg-card p-8 space-y-4">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                                <c.icon className="w-5 h-5" />
                             </div>
-                        </div>
-
-                        {/* Mobile Fallback Bullets */}
-                        <div className="md:hidden grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-                            <div className="bg-white dark:bg-card p-4 rounded-lg shadow-sm border">
-                                <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm">Guided instructions</h4>
-                                <p className="text-xs text-muted-foreground">Scan or match order here</p>
-                            </div>
-                            <div className="bg-white dark:bg-card p-4 rounded-lg shadow-sm border">
-                                <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm">Quick drop-off</h4>
-                                <p className="text-xs text-muted-foreground">Induction slot opens automatically</p>
-                            </div>
-                            <div className="bg-white dark:bg-card p-4 rounded-lg shadow-sm border">
-                                <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm">Secure locking doors</h4>
-                                <p className="text-xs text-muted-foreground">Automatically locks between drops</p>
-                            </div>
-                            <div className="bg-white dark:bg-card p-4 rounded-lg shadow-sm border">
-                                <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm">Multiple intake slots</h4>
-                                <p className="text-xs text-muted-foreground">For various item sizes</p>
-                            </div>
-                        </div>
-                    </div>
+                            <h3 className="text-base font-semibold dark:text-white">{c.title}</h3>
+                            <p className="text-base text-muted-foreground leading-relaxed">{c.desc}</p>
+                        </article>
+                    ))}
                 </div>
             </section>
 
-            {/* ================= WHY SMARTER (CONSUMER) ================= */}
-            <section className="mt-16 md:mt-24 lg:mt-32">
-                <div className="container-encora px-4">
-                    <h2 className="heading-lg text-center mb-16 dark:text-white">
-                        Why it’s smarter
-                    </h2>
-
-                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                        {[
-                            { icon: CheckCircle, title: "Clear confirmation", desc: "Know instantly your drop-off worked." },
-                            { icon: Smartphone, title: "No staff required", desc: "No staff needed." },
-                            { icon: MapPin, title: "Built for public spaces", desc: "Designed for high-traffic locations." },
-                            { icon: Zap, title: "Faster customer flow", desc: "Helps items get to their next step sooner." },
-                        ].map((c, i) => (
-                            <article
-                                key={i}
-                                className="space-y-3 rounded-2xl border bg-card p-5 h-full"
-                            >
-                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400">
-                                    <c.icon className="w-5 h-5" />
-                                </div>
-                                <h3 className="text-sm font-semibold dark:text-white">{c.title}</h3>
-                                <p className="text-sm text-muted-foreground dark:text-gray-300">{c.desc}</p>
-                            </article>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ================= OPERATORS SECTION ================= */}
-            <div id="operators" className="scroll-mt-24" />
-            <div className="container-encora px-4">
-                <hr className="border-t border-gray-200 dark:border-gray-700" />
-            </div>
-
-            <section className="mt-16 md:mt-24 lg:mt-[96px] ">
-                <div className="container-encora px-4 ">
-                    {/* Intro */}
-                    <div className="mx-auto mb-16">
-                        <span className="inline-block px-3 text-center py-1 bg-encora-mint/10 text-encora-green dark:text-encora-mint text-xs font-bold uppercase tracking-wider rounded-full mb-4 border border-encora-mint/20">
+            {/* OPERATORS SECTION */}
+            <section id="operators" className="mx-auto max-w-6xl w-full mt-24 px-6">
+                <div className="border-t border-border pt-24">
+                    <div className="mb-12">
+                        <span className="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider rounded-full mb-4 border border-emerald-500/20">
                             For Operators
                         </span>
-                        <h2 className="heading-lg mb-8 text-center dark:text-white">
-                            Active returns infrastructure
-                        </h2>
-
-                        <div className="prose prose-lg max-w-none">
-                            <p className="font-medium text-xl leading-relaxed text-encora-green mb-6 dark:text-encora-mint">
-                                More than just a drop-off point.
-                            </p>
-                            <p className="mb-4 text-muted-foreground dark:text-gray-300">
-                                Traditional return lockers are passive, limited, and often disconnected from the broader supply chain. They store items until someone manually retrieves them.
-                            </p>
-                            <p className="mb-4 text-muted-foreground dark:text-gray-300">
-                                The Encora Smart Return Bin is an <strong className="text-foreground dark:text-white">active participant</strong> in your reverse logistics network. It initiates verification and sorting the moment a return is made.
-                            </p>
-                            <p className="text-muted-foreground dark:text-gray-300">
-                                By reading encoded tags and communicating with our Verification Cloud, the Smart Bin helps ensure every return is legitimate, tracked, and ready for its next life — resale, recycling, or restocking.
-                            </p>
+                        <h2 className="heading-lg mb-6 dark:text-white">Active returns infrastructure</h2>
+                        <div className="space-y-4 text-base text-muted-foreground leading-relaxed max-w-3xl">
+                            <p className="font-semibold text-lg text-foreground dark:text-white">More than just a drop-off point.</p>
+                            <p>Traditional return lockers are passive — they store items until someone manually retrieves them. The Encora Smart Return Bin is an <strong className="text-foreground dark:text-white">active participant</strong> in your reverse logistics network, initiating verification and routing the moment a return is made.</p>
+                            <p>By reading encoded tags and communicating with our verification cloud, the bin ensures every return is legitimate, tracked, and ready for its next step — resale, recycling, or restocking.</p>
                         </div>
-
                         <div className="flex flex-wrap gap-4 mt-8">
                             <Link
-                                href="/resources/spec-sheet.pdf"
-                                target="_blank"
-                                onClick={() => sendGTMEvent({ event: "pdf_download", file: "spec-sheet.pdf" })}
-                                className="inline-flex items-center justify-center rounded-full bg-emerald-600 dark:bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-emerald-500/40 dark:shadow-emerald-500/50 hover:bg-emerald-500 dark:hover:bg-emerald-400 transition-colors"
+                                href="/contact-us"
+                                className="rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-emerald-500 transition-colors"
                             >
-                                Download Spec Sheet
+                                Request a pilot
                             </Link>
                             <Link
                                 href="/contact-us"
-                                className="inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-muted-foreground hover:border-foreground/50 hover:text-foreground transition-colors"
+                                className="rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-muted-foreground hover:border-foreground/50 hover:text-foreground transition-colors"
                             >
-                                Contact Us
+                                Contact us
                             </Link>
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-12 lg:gap-24">
-                        {/* Subsection 4A: Core capabilities (Operator) */}
-                        <div className="space-y-8">
-                            <h3 className="heading-md dark:text-white">Core capabilities</h3>
+                    <div className="grid md:grid-cols-2 gap-12 lg:gap-16 mt-16">
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-bold dark:text-white">Core capabilities</h3>
                             <ul className="space-y-6">
                                 {[
-                                    { title: "Real-time Verification", desc: "Instantly validates returned items against database records." },
-                                    { title: "Contactless Drop-off", desc: "Seamless experience for customers, no staff intervention needed." },
-                                    { title: "Secure Storage", desc: "Anti-theft design helps keep items safe until collection." },
-                                    { title: "Data-Driven Insights", desc: "Captures granular data on return volume, timing, and item condition." }
+                                    { title: "Real-time verification", desc: "Validates returned items against order records at the moment of drop-off." },
+                                    { title: "Contactless drop-off", desc: "Seamless customer experience — no staff intervention needed." },
+                                    { title: "Secure storage", desc: "Anti-tamper design keeps items safe until collection." },
+                                    { title: "Data capture", desc: "Logs return volume, timing, item condition, and exception flags per transaction." },
                                 ].map((item, i) => (
                                     <li key={i} className="flex gap-4">
-                                        <div className="w-6 h-6 rounded-full bg-encora-green/10 flex-shrink-0 flex items-center justify-center text-encora-green mt-1">
+                                        <div className="w-6 h-6 rounded-full bg-emerald-500/10 flex-shrink-0 flex items-center justify-center text-emerald-600 mt-0.5">
                                             <CheckCircle className="w-4 h-4" />
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-lg">{item.title}</h4>
-                                            <p className="text-gray-600 dark:text-gray-300">{item.desc}</p>
+                                            <h4 className="font-semibold text-base">{item.title}</h4>
+                                            <p className="text-base text-muted-foreground mt-1">{item.desc}</p>
                                         </div>
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
-                        {/* Subsection 4B: Key Capabilities */}
-                        <div className="space-y-8">
-                            <h3 className="heading-md dark:text-white">Key Capabilities</h3>
-                            <div className="grid sm:grid-cols-2 gap-6">
-                                <Capability
-                                    icon={<BinIcon />}
-                                    title="High Capacity"
-                                    desc="Optimized spatial design to maximize storage within a compact footprint."
-                                />
-                                <Capability
-                                    icon={<TagsIcon />}
-                                    title="QR + UHF RFID + NFC compatible"
-                                    desc="Compatible with various RFID and NFC standards for broad integration."
-                                />
-                                <Capability
-                                    icon={<ConnectIcon />}
-                                    title="Always Connected"
-                                    desc="IoT-enabled for continuous status monitoring and alerts."
-                                />
-                                <Capability
-                                    icon={<VerifyIcon />}
-                                    title="Instant Feedback"
-                                    desc="Provides immediate confirmation to users via integrated display."
-                                />
+                        <div className="space-y-6">
+                            <h3 className="text-xl font-bold dark:text-white">Technical specs</h3>
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                {[
+                                    { icon: <BinIcon />, title: "High capacity", desc: "Compact footprint, optimized for store floor deployment." },
+                                    { icon: <TagsIcon />, title: "QR + RFID + NFC", desc: "Compatible with major tag standards for broad POS integration." },
+                                    { icon: <ConnectIcon />, title: "Always connected", desc: "IoT-enabled for continuous monitoring and alerts." },
+                                    { icon: <VerifyIcon />, title: "Instant feedback", desc: "On-screen confirmation for customers and real-time operator dashboard." },
+                                ].map((item, i) => (
+                                    <div key={i} className="bg-card p-6 rounded-2xl border border-border space-y-3">
+                                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                                            <div className="w-4 h-4 flex items-center justify-center">{item.icon}</div>
+                                        </div>
+                                        <h4 className="text-sm font-semibold dark:text-white">{item.title}</h4>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* ================= FINAL CTA ================= */}
-            <section className="py-24 text-center">
-                <div className="container-encora px-4">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            {/* BOTTOM CTA */}
+            <section className="mx-auto max-w-6xl w-full mt-24 mb-24 px-6">
+                <div className="rounded-3xl bg-emerald-600 text-white p-10 md:p-14 text-center">
+                    <h2 className="text-2xl md:text-3xl font-semibold">
                         Ready to upgrade your return infrastructure?
                     </h2>
-                    <p className="text-lg md:text-xl text-muted-foreground dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-                        See the full technical specifications or talk to our team about a deployment.
+                    <p className="mt-3 text-base text-emerald-100 max-w-lg mx-auto">
+                        Talk to our team about a pilot deployment at your locations.
                     </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-4">
+                    <div className="mt-8 flex flex-wrap justify-center gap-4">
                         <Link
-                            href="/resources/spec-sheet.pdf"
-                            target="_blank"
-                            onClick={() => sendGTMEvent({ event: "pdf_download", file: "spec-sheet.pdf" })}
-                            className="inline-flex items-center justify-center rounded-full bg-emerald-600 dark:bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-emerald-500/40 dark:shadow-emerald-500/50 hover:bg-emerald-500 dark:hover:bg-emerald-400 transition-colors"
+                            href="/contact-us"
+                            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
                         >
-                            Download Spec Sheet
+                            Request a pilot
                         </Link>
                         <Link
                             href="/contact-us"
-                            className="inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-muted-foreground hover:border-foreground/50 hover:text-foreground transition-colors"
+                            className="rounded-full border-2 border-white/60 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
                         >
-                            Contact Us
+                            Contact us
                         </Link>
                     </div>
                 </div>
             </section>
 
-        </main >
-    );
-}
-
-function Capability({ icon, title, desc }: { icon: React.ReactNode; title: string, desc: string }) {
-    return (
-        <div className="bg-card p-5 rounded-2xl border space-y-3 h-full">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400">
-                <div className="w-5 h-5 flex items-center justify-center child-svg:w-full child-svg:h-full">
-                    {icon}
-                </div>
-            </div>
-            <h4 className="text-sm font-semibold dark:text-white">{title}</h4>
-            <p className="text-sm text-muted-foreground dark:text-gray-300 leading-snug">{desc}</p>
-        </div>
+        </main>
     );
 }
