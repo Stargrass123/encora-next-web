@@ -1,35 +1,34 @@
-// import { recycle, Retail, Recovery } from "lucide-react";
 const Solutions = () => {
   const solutions = [
     {
-      title: "Reuse",
+      title: "Apparel Retailers",
       description:
-        "Maximize product lifecycle value through intelligent reuse and resale channels.",
-      icon: "♻️",
+        "High return volumes, tight margins, and growing fraud exposure. RetAI gives apparel retailers verified intake and automated routing at every location.",
+      icon: "👗",
     },
     {
-      title: "Retail",
+      title: "Mall & Hub Operators",
       description:
-        "Streamline in-store and online returns with unified processing.",
-      icon: "🛍️",
+        "One Encora hub can serve multiple retailers in a single location — increasing utilization and creating a new revenue stream for property owners.",
+      icon: "🏬",
     },
     {
-      title: "Recovery",
-      description: "Recover maximum value from damaged or defective products.",
-      icon: "💰",
+      title: "Logistics & 3PL Partners",
+      description:
+        "Cleaner intake data means better downstream decisions. RetAI integrates with existing logistics systems to route items to restock, resale, or recycle.",
+      icon: "📦",
     },
   ];
 
   return (
     <section className="section-spacing border-b border-[#E0E0E0] dark:border-encora-mint/30">
       <div className="container-encora space-y-4">
-        <div className="text-center ">
-          <h2 className="heading-lg  dark:text-white">
-            Solutions for Every Channel
+        <div className="text-center">
+          <h2 className="heading-lg dark:text-white">
+            Built for the Whole Returns Ecosystem
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-6xl mx-auto dark:text-white/80">
-            Whether you're managing reuse, retail returns, or recovery, Encora
-            adapts to your needs.
+            Whether you run a retail chain, a mall, or a logistics operation — Encora fits where returns happen.
           </p>
         </div>
 

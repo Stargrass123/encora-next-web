@@ -3,36 +3,35 @@ import { BrainCircuit, FileCheck, ChartLine } from "lucide-react";
 const AISection = () => {
   const features = [
     {
-      title: "Intelligent Routing",
+      title: "Verified at Intake",
       description:
-        "AI-powered decision engine routes returns to the optimal destination based on condition, value, and market demand.",
+        "RetAI confirms item identity and condition the moment it enters the chamber — before any refund is issued. No more empty boxes, worn items, or SKU swaps.",
       icon: <BrainCircuit className="w-5 h-5 dark:text-encora-green-dark" />,
-      stat: "40% faster",
+      stat: "$101B in fraud",
     },
     {
-      title: "Compliance Ready",
+      title: "No Staff Needed",
       description:
-        "Built-in support for extended producer responsibility (EPR) regulations and circular economy mandates.",
+        "The entire return process is automated. Customers self-serve in under 60 seconds. Staff are freed from the service desk entirely.",
       icon: <FileCheck className="w-5 h-5 dark:text-encora-green-dark" />,
-      stat: "100% compliant",
+      stat: "$29 avg per return",
     },
     {
-      title: "Predictive Analytics",
+      title: "Data Retailers Can't Get Today",
       description:
-        "Machine learning models predict return patterns and optimize inventory placement for maximum recovery value.",
+        "Every return becomes a structured data event — what came back, in what condition, from whom. That data drives smarter inventory, routing, and recovery decisions.",
       icon: <ChartLine className="w-5 h-5 dark:text-encora-green-dark" />,
-      stat: "25% ↑ recovery",
+      stat: "0% verified today",
     },
   ];
 
   return (
-    <section className=" section-spacing border-t border-b border-[#E0E0E0] dark:border-encora-mint/30">
+    <section className="section-spacing border-t border-b border-[#E0E0E0] dark:border-encora-mint/30">
       <div className="container-encora space-y-4">
-        <div className="text-center ">
-          <h2 className="heading-lg  dark:text-white">AI Where It Matters</h2>
+        <div className="text-center">
+          <h2 className="heading-lg dark:text-white">The Missing Layer</h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-6xl mx-auto dark:text-white/80">
-            Advanced intelligence meets operational simplicity. Encora's AI
-            works behind the scenes to optimize every return decision.
+            Retailers process millions of returns every year. Almost none are verified at the point of handoff. RetAI changes that.
           </p>
         </div>
 
@@ -40,14 +39,14 @@ const AISection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className=" rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-[#E0E0E0] dark:border-encora-mint/30 group hover:border-encora-mint backdrop-blur-sm"
+              className="rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-[#E0E0E0] dark:border-encora-mint/30 group hover:border-encora-mint backdrop-blur-sm"
             >
               <div className="flex items-start gap-4 mb-4">
-                <div className="icon-container group-hover:bg-encora-mint dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-encora-green transition-all ">
+                <div className="icon-container group-hover:bg-encora-mint dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-encora-green transition-all">
                   <span className="text-3xl">{feature.icon}</span>
                 </div>
                 <div className="flex-1">
-                  <div className="inline-block px-3 py-1  text-encora-green dark:text-white text-xs font-bold rounded-full mb-2">
+                  <div className="inline-block px-3 py-1 text-encora-green dark:text-white text-xs font-bold rounded-full mb-2">
                     {feature.stat}
                   </div>
                   <h3 className="text-xl font-bold text-encora-green dark:text-white mb-2">
@@ -65,63 +64,5 @@ const AISection = () => {
     </section>
   );
 };
-
-// export default AISectionconst AISection = () => {
-//   const features = [
-//     {
-//       title: "Intelligent Routing",
-//       description: "AI-powered decision engine routes returns to the optimal destination based on condition, value, and market demand.",
-//       icon: "🧠",
-//       stat: "40% faster",
-//     },
-//     {
-//       title: "Compliance Ready",
-//       description: "Built-in support for extended producer responsibility (EPR) regulations and circular economy mandates.",
-//       icon: "📋",
-//       stat: "100% compliant",
-//     },
-//     {
-//       title: "Predictive Analytics",
-//       description: "Machine learning models predict return patterns and optimize inventory placement for maximum recovery value.",
-//       icon: "📊",
-//       stat: "25% ↑ recovery",
-//     },
-//   ]
-
-//   return (
-//     <section className="bg-white section-spacing border-t border-b border-[#E0E0E0]">
-//       <div className="container-encora">
-//         <div className="text-center mb-16">
-//           <h2 className="heading-lg mb-4">AI Where It Matters</h2>
-//           <p className="body-text-lg max-w-2xl mx-auto">
-//             Advanced intelligence meets operational simplicity. Encora's AI works behind the scenes to optimize every return decision.
-//           </p>
-//         </div>
-
-//         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//           {features.map((feature, index) => (
-//             <div
-//               key={index}
-//               className="card-module group hover:border-encora-mint"
-//             >
-//               <div className="flex items-start gap-4 mb-4">
-//                 <div className="icon-container group-hover:bg-encora-mint group-hover:text-white transition-all">
-//                   <span className="text-3xl">{feature.icon}</span>
-//                 </div>
-//                 <div className="flex-1">
-//                   <div className="inline-block px-3 py-1 bg-encora-mint text-encora-green text-xs font-bold rounded-full mb-2">
-//                     {feature.stat}
-//                   </div>
-//                   <h3 className="text-xl font-bold text-encora-green mb-2">{feature.title}</h3>
-//                 </div>
-//               </div>
-//               <p className="body-text leading-relaxed">{feature.description}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
 
 export default AISection;
