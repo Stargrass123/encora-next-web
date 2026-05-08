@@ -21,53 +21,47 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen text-foreground">
 
-      {/* HERO */}
+      {/* HERO — full-width banner */}
       <section
         ref={sectionRef}
-        className="relative mt-16 lg:mt-0 min-h-[80vh] flex items-center overflow-hidden bg-card py-16 sm:py-0"
+        className="relative mt-16 lg:mt-0 min-h-[85vh] flex items-center overflow-hidden"
       >
-        <div className="container-encora relative z-10 px-6 sm:px-8">
-          <div className="grid grid-cols-12 gap-8 items-center">
+        {/* Background image */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/about-page-banner.jpeg"
+            alt="Woman returning item at Encora kiosk in retail store"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
+        </div>
 
-            {/* LEFT */}
-            <div className="col-span-12 lg:col-span-8 space-y-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
-                About Encora
-              </p>
-              <h1 className="leading-tight text-3xl sm:text-4xl lg:text-6xl font-bold text-encora-green dark:text-encora-mint">
-                Built to verify <br />
-                what comes back
-              </h1>
-              <p className="text-lg text-encora-green/70 dark:text-encora-mint leading-relaxed max-w-xl">
-                Encora is a hardware-software platform that captures proof of return at the moment it happens—so retailers, operators, and logistics partners can stop guessing and start trusting their data.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/contact-us"
-                  className="rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-emerald-500 transition-colors"
-                >
-                  Talk to us
-                </Link>
-              </div>
-              <span className="inline-block rounded-md px-2 py-1 text-xs text-slate-600 dark:text-slate-300 bg-slate-100/40 dark:bg-slate-800/40">
-                Patent pending · Seattle, WA
-              </span>
+        {/* Content */}
+        <div className="container-encora relative z-10 px-6 sm:px-8 py-24">
+          <div className="max-w-2xl space-y-6">
+            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400">
+              About Encora
+            </p>
+            <h1 className="leading-tight text-3xl sm:text-4xl lg:text-6xl font-bold text-white">
+              Built to verify <br />
+              what comes back
+            </h1>
+            <p className="text-lg text-white/80 leading-relaxed">
+              Encora is a hardware-software platform that captures proof of return at the moment it happens—so retailers, operators, and logistics partners can stop guessing and start trusting their data.
+            </p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link
+                href="/contact-us"
+                className="rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-emerald-500 transition-colors"
+              >
+                Talk to us
+              </Link>
             </div>
-
-            {/* RIGHT */}
-            <div className="col-span-12 lg:col-span-4 flex items-center justify-center">
-              <div className="rounded-2xl border border-slate-200/50 dark:border-slate-800/50 bg-white dark:bg-slate-900 shadow-xl p-1">
-                <Image
-                  src="/images/retai-after.jpeg"
-                  alt="Encora kiosk"
-                  width={350}
-                  height={350}
-                  className="object-contain rounded-2xl"
-                  priority
-                />
-              </div>
-            </div>
-
+            <span className="inline-block rounded-md px-2 py-1 text-xs text-white/60 bg-white/10">
+              Patent pending · Seattle, WA
+            </span>
           </div>
         </div>
       </section>
@@ -124,7 +118,6 @@ export default function AboutPage() {
               <li>Live visibility into volume and location.</li>
             </ul>
           </article>
-
           <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-8">
             <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700">
               <span className="text-lg font-semibold">✓</span>
@@ -137,7 +130,6 @@ export default function AboutPage() {
               <li>Tamper-evident record stored per transaction.</li>
             </ul>
           </article>
-
           <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-8">
             <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700">
               <span className="text-lg font-semibold">⧉</span>
