@@ -14,7 +14,7 @@ export default function BinPage() {
             <section className="relative flex min-h-[100vh] w-full items-center overflow-hidden">
                 <div className="absolute inset-0 -z-10">
                     <Image
-                        src="/images/smartbin-hero.png"
+                        src="/images/smartbin-hero-2.png"
                         alt="Encora Smart Return Bin in retail environment"
                         fill
                         className="object-cover object-center"
@@ -102,84 +102,34 @@ export default function BinPage() {
                         Designed for high-traffic retail floors, mall corridors, and logistics hubs.
                     </p>
                 </div>
-                <div className="relative max-w-4xl mx-auto">
-                    <div className="relative aspect-[4/3] flex items-center justify-center">
+                {/* Image right, callouts left — keeps text off the bin */}
+                <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                    {/* Left: callout list */}
+                    <div className="space-y-6 order-2 md:order-1">
+                        {[
+                            { title: "Touchscreen display", desc: "On-bin guided instructions walk the customer through every step — no staff needed." },
+                            { title: "QR / barcode scanner", desc: "Scans order receipts or QR codes to identify and validate the return before the door opens." },
+                            { title: "Verified intake slot", desc: "Camera and weight sensor capture photo evidence and item weight at the exact moment of drop." },
+                            { title: "Secure storage compartment", desc: "Tamper-resistant lower compartment holds items safely until operator collection." },
+                            { title: "IoT connected", desc: "Always-on connectivity streams return events to the operator dashboard in real time." },
+                        ].map((item, i) => (
+                            <div key={i} className="flex gap-4">
+                                <div className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0 mt-2.5"></div>
+                                <div>
+                                    <h4 className="font-semibold text-base text-foreground dark:text-white">{item.title}</h4>
+                                    <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{item.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    {/* Right: bin image */}
+                    <div className="relative aspect-[3/4] order-1 md:order-2">
                         <Image
                             src="/images/smartbin-feature.png"
                             alt="Encora Smart Return Bin features"
                             fill
-                            className="object-contain z-10"
+                            className="object-contain"
                         />
-
-                        {/* Desktop callout pointers */}
-                        <div className="hidden md:block absolute inset-0 z-20">
-                            <div className="absolute top-[25%] left-0 w-[30%] flex items-center justify-end">
-                                <div className="text-right pr-4">
-                                    <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-3 rounded-xl shadow-sm">
-                                        <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm leading-tight">Guided instructions</h4>
-                                        <p className="text-xs text-muted-foreground mt-1">Touchscreen display at eye level</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="w-16 h-px bg-encora-green"></div>
-                                    <div className="w-2 h-2 bg-encora-green rounded-full"></div>
-                                </div>
-                            </div>
-
-                            <div className="absolute top-[20%] right-0 w-[30%] flex items-center justify-start flex-row-reverse">
-                                <div className="text-left pl-4">
-                                    <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-3 rounded-xl shadow-sm">
-                                        <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm leading-tight">Verified intake</h4>
-                                        <p className="text-xs text-muted-foreground mt-1">Camera + weight sensor at drop</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center flex-row-reverse">
-                                    <div className="w-16 h-px bg-encora-green"></div>
-                                    <div className="w-2 h-2 bg-encora-green rounded-full"></div>
-                                </div>
-                            </div>
-
-                            <div className="absolute top-[62%] right-0 w-[30%] flex items-center justify-start flex-row-reverse">
-                                <div className="text-left pl-4">
-                                    <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-3 rounded-xl shadow-sm">
-                                        <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm leading-tight">Secure storage</h4>
-                                        <p className="text-xs text-muted-foreground mt-1">Auto-locks between drops</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center flex-row-reverse">
-                                    <div className="w-16 h-px bg-encora-green"></div>
-                                    <div className="w-2 h-2 bg-encora-green rounded-full"></div>
-                                </div>
-                            </div>
-
-                            <div className="absolute top-[62%] left-0 w-[30%] flex items-center justify-end">
-                                <div className="text-right pr-4">
-                                    <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm p-3 rounded-xl shadow-sm">
-                                        <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm leading-tight">Single intake slot</h4>
-                                        <p className="text-xs text-muted-foreground mt-1">Handles apparel and accessories</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="w-16 h-px bg-encora-green"></div>
-                                    <div className="w-2 h-2 bg-encora-green rounded-full"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Mobile fallback */}
-                    <div className="md:hidden grid grid-cols-2 gap-4 mt-8">
-                        {[
-                            { title: "Guided instructions", desc: "Touchscreen display at eye level" },
-                            { title: "Verified intake", desc: "Camera + weight sensor at drop" },
-                            { title: "Secure storage", desc: "Auto-locks between drops" },
-                            { title: "Single intake slot", desc: "Handles apparel and accessories" },
-                        ].map((item, i) => (
-                            <div key={i} className="bg-card p-4 rounded-xl border">
-                                <h4 className="font-bold text-encora-green dark:text-encora-mint text-sm">{item.title}</h4>
-                                <p className="text-xs text-muted-foreground mt-1">{item.desc}</p>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </section>
