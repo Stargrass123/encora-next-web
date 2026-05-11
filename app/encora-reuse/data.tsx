@@ -5,18 +5,18 @@ import { BinIcon, TagsIcon, VerifyIcon, ConnectIcon } from "@/components/icon";
 export const threeSteps = [
     {
         img: "/images/Borrow_image.jpeg",
-        title: "Borrow",
-        sub: "Scan a QR (or staff assign) to link the container to the student.",
+        title: "01 — Borrow",
+        sub: "A QR, staff scan, or RFID workflow links a tagged container to the student, customer, phone number, or account.",
     },
     {
         img: "/images/three step photo.png",
-        title: "Return",
-        sub: "Tagged containers are brought to the bin; RFID or QR identifies the container and links it back to the user.",
+        title: "02 — Remind",
+        sub: "Text or email reminders tell users when and where to return. Standard return window: 7 days.",
     },
     {
         img: "/images/three step reuse step 3.png",
-        title: "Verified check-in",
-        sub: "Tagged containers are checked in, marked as returned, and cleared from the user's account.",
+        title: "03 — Return + Clear",
+        sub: "RFID, QR, or staff scan checks the container back in, marks it returned, and clears it from the user's account.",
     },
 ];
 

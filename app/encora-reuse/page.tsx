@@ -52,7 +52,7 @@ export default function EncoraReuseV2() {
               Smart reuse —<br />no app required
             </h1>
             <p className="text-lg text-white/80 leading-relaxed">
-              Encora Reuse helps campuses, cities, and foodservice operators run reusable container programs with verified return tracking — no app download required. Students or customers borrow in seconds; at return, tagged containers are checked in through RFID/QR-enabled workflows, creating a return record operators can use for reminders, replacement-fee tracking, recovery, and reporting.
+              Encora helps campuses, cities, and foodservice operators run reusable container programs with QR/RFID checkout, text/email reminders, verified returns, and replacement-fee tracking — no app download required.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <Link
@@ -284,7 +284,7 @@ export default function EncoraReuseV2() {
               {[
                 { title: "Return records", desc: "Every return is logged with a timestamp and container status — operators can use records for reminders, replacement fees, recovery, and reporting." },
                 { title: "Ops telemetry", desc: "Surfaces late returns, hotspots, and operational risk in real time." },
-                { title: "API-first architecture", desc: "Integrates with campus systems (Transact, Atrium, TouchNet, CBORD, Dine On) via webhooks — no rip-and-replace." },
+                { title: "Integration-ready workflows", desc: "Return records can support campus or operator reporting, reminder workflows, and configured exports or API connections where available — no rip-and-replace required." },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
                   <span className="mt-2 w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0"></span>
@@ -295,9 +295,7 @@ export default function EncoraReuseV2() {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-muted-foreground">
-              Campus system examples shown. Use does not imply partnership.
-            </p>
+
           </div>
           <div className="rounded-2xl border border-border bg-card p-4 overflow-hidden">
             <ImageWithFallback
