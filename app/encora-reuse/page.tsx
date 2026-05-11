@@ -283,7 +283,7 @@ export default function EncoraReuseV2() {
             <div className="space-y-5">
               {[
                 { title: "Return records", desc: "Every return is logged with a timestamp and container status — operators can use records for reminders, replacement fees, recovery, and reporting." },
-                { title: "Ops telemetry", desc: "Surfaces late returns, hotspots, and operational risk in real time." },
+                { title: "Operations visibility", desc: "Operators can see late returns, return patterns, and container recovery trends without manual tracking." },
                 { title: "Integration-ready workflows", desc: "Return records can support campus or operator reporting, reminder workflows, and configured exports or API connections where available — no rip-and-replace required." },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">

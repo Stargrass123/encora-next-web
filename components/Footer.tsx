@@ -18,7 +18,7 @@ export default function SiteFooter() {
               className="h-8 w-auto mb-4"
             />
             <p className="text-white/50 text-sm leading-relaxed">
-              AI-verified return hubs for retail. Lower labor. Less loss. Verified outcomes.
+              Verified return infrastructure for retail, reuse, and recovery programs.
             </p>
             <p className="text-white/30 text-xs mt-4">Patent Pending · Seattle, WA</p>
             {/* Social links */}
