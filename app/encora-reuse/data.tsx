@@ -41,32 +41,32 @@ export const modes = [
 export const howSteps = [
     {
         icon: <TagsIcon />,
-        title: "Assign (Tag)",
-        body: "QR or staff/RFID links container ↔ student ID/phone.",
-    },
-    {
-        icon: <TagsIcon />,
-        title: "Use (Archive)",
-        body: "Students dine as usual; container stays tagged to them.",
+        title: "01 — Assign",
+        body: "A QR, staff scan, or RFID workflow links a tagged container to a student, customer, phone number, or account.",
     },
     {
         icon: <BinIcon />,
-        title: "Return",
-        body: "Container is brought to the bin or assisted-return point; RFID or QR identifies the container.",
+        title: "02 — Use",
+        body: "The participant takes the meal as usual. The container remains assigned while checked out.",
     },
     {
         icon: <VerifyIcon />,
-        title: "Verified check-in",
-        body: "Container is marked returned and cleared from the user's account. Late-return status resolved automatically.",
+        title: "03 — Remind",
+        body: "Users receive text or email reminders with the return deadline, approved return location, and instructions. Standard return window: 7 days.",
+    },
+    {
+        icon: <BinIcon />,
+        title: "04 — Return",
+        body: "At a smart bin or assisted return point, the tagged container is checked in by RFID, QR, or staff scan.",
     },
     {
         icon: <VerifyIcon />,
-        title: "Operator record",
-        body: "Return event logged to operator dashboard. Reminders, recovery alerts, and reporting updated in real time.",
+        title: "05 — Clear",
+        body: "The container is marked as returned and cleared from the user's account. Late or missing containers may trigger a replacement fee.",
     },
     {
         icon: <ConnectIcon />,
-        title: "Sync (Webhook)",
-        body: "Webhooks update campus card/POS/LMS; late reminders fire automatically.",
+        title: "06 — Track",
+        body: "Operators can view return status, late containers, reminder activity, recovery rates, and container inventory from the dashboard or reporting workflow.",
     },
 ];

@@ -52,7 +52,7 @@ export default function EncoraReuseV2() {
               Smart reuse —<br />no app required
             </h1>
             <p className="text-lg text-white/80 leading-relaxed">
-              Encora Reuse helps campuses, cities, and foodservice operators run reusable container programs with verified return tracking — no app download required. Students or customers borrow in seconds; at return, tagged containers are checked in through RFID/QR-enabled workflows, creating a return record operators can use for reminders, refunds, recovery, and reporting.
+              Encora Reuse helps campuses, cities, and foodservice operators run reusable container programs with verified return tracking — no app download required. Students or customers borrow in seconds; at return, tagged containers are checked in through RFID/QR-enabled workflows, creating a return record operators can use for reminders, replacement-fee tracking, recovery, and reporting.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <Link
@@ -244,9 +244,9 @@ export default function EncoraReuseV2() {
           How it works
         </h2>
         <p className="text-center text-lg text-muted-foreground mb-12 max-w-xl mx-auto">
-          Every step is tracked, from assignment to refund, so operators can automate trust.
+          Every container checkout and return creates a simple record — so operators can see what is out, what came back, and what still needs follow-up.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {howSteps.map((step, i) => (
             <div key={step.title} className="flex gap-4 items-start rounded-2xl border border-border bg-card p-8">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700 dark:text-emerald-300 flex-shrink-0">
@@ -261,17 +261,28 @@ export default function EncoraReuseV2() {
         </div>
       </section>
 
+
+      {/* RETURN POLICY CALLOUT */}
+      <section className="mx-auto max-w-6xl px-6 mt-24">
+        <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 md:p-10">
+          <h3 className="text-xl font-semibold mb-4 dark:text-white">Return policy</h3>
+          <p className="text-base text-muted-foreground leading-relaxed max-w-3xl">
+            Participants have <strong className="text-foreground dark:text-white">7 days</strong> to return checked-out containers. Encora can send text or email reminders with the return deadline, approved return locations, and simple return instructions. Containers checked in on time are cleared from the user&apos;s account. Late or missing containers may trigger a replacement fee based on the pilot policy.
+          </p>
+        </div>
+      </section>
+
       {/* WHY IT WORKS */}
       <section className="mx-auto max-w-6xl px-6 mt-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <h2 className="heading-lg dark:text-white">Why it works</h2>
             <p className="text-base text-muted-foreground leading-relaxed">
-              Reuse programs live or die on proof. Encora captures evidence automatically and turns it into trusted data for operations, refunds, and reporting.
+              Reuse programs live or die on follow-through. Encora tracks every container from checkout to return — giving operators the visibility to send reminders, recover containers, and report outcomes.
             </p>
             <div className="space-y-5">
               {[
-                { title: "Verified return records", desc: "Every return is logged with a timestamp and container status — operator can use records for reminders, refunds, and recovery." },
+                { title: "Return records", desc: "Every return is logged with a timestamp and container status — operators can use records for reminders, replacement fees, recovery, and reporting." },
                 { title: "Ops telemetry", desc: "Surfaces late returns, hotspots, and operational risk in real time." },
                 { title: "API-first architecture", desc: "Integrates with campus systems (Transact, Atrium, TouchNet, CBORD, Dine On) via webhooks — no rip-and-replace." },
               ].map((item, i) => (
