@@ -52,26 +52,139 @@ export default function EncoraReuseV2() {
               Smart reuse —<br />no app required
             </h1>
             <p className="text-lg text-white/80 leading-relaxed">
-              Students borrow in seconds. At return, RFID-tagged containers auto-open the correct slot, auto-lock, and the bin captures photo and weight — proof-grade data for campus ops.
+              Encora Reuse helps campuses, cities, and foodservice operators run reusable container programs with verified return tracking — no app download required. Students or customers borrow in seconds; at return, tagged containers are checked in through RFID/QR-enabled workflows, creating a return record operators can use for reminders, refunds, recovery, and reporting.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <Link
-                href="/contact-us"
+                href="/contact-us?context=reuse-pilot"
                 className="rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-500 transition-colors"
               >
-                Talk to us
+                Explore a Reuse Pilot
               </Link>
-              <a
-                href="/resources/spec-sheet.pdf"
+              <Link
+                href="/contact-us?context=reuse-pilot"
                 className="rounded-full border-2 border-white/60 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
               >
-                Spec sheet
-              </a>
+                Request Pilot Brief
+              </Link>
             </div>
             <span className="inline-block rounded-md px-2 py-1 text-xs text-white/60 bg-white/10">
-              Powered by RetAI verification
+              Built on the same verification layer as RetAI
             </span>
           </div>
+        </div>
+      </section>
+
+
+      {/* THE PROBLEM */}
+      <section className="mx-auto max-w-6xl px-6 mt-24">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="heading-lg mb-6 dark:text-white">Why reuse programs fail</h2>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Reusable container programs have strong intent but weak infrastructure. Containers go missing, returns are manual, staff lack visibility, and requiring participants to download another app kills adoption before it starts.
+            </p>
+          </div>
+          <ul className="space-y-4 mt-2">
+            {[
+              "Containers lost with no record of where or when",
+              "Manual staff check-in creates bottlenecks and errors",
+              "No operator dashboard — no way to send reminders or track recovery",
+              "App-required workflows exclude the majority of participants",
+              "No audit trail for sustainability reporting",
+            ].map((item, i) => (
+              <li key={i} className="flex gap-3 items-start">
+                <span className="mt-2 w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
+                <span className="text-base text-muted-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* BEST-FIT PILOTS */}
+      <section className="mx-auto max-w-6xl px-6 mt-24">
+        <h2 className="text-center heading-lg mb-4 dark:text-white">Best-fit pilot partners</h2>
+        <p className="text-center text-base text-muted-foreground mb-10 max-w-xl mx-auto">
+          Encora Reuse is designed for organizations already running or planning reusable container programs.
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {[
+            "Campus dining programs",
+            "City & municipal reuse initiatives",
+            "Food halls and venues",
+            "Office & corporate dining",
+            "Foodservice operators",
+            "Reusable foodware pilots",
+          ].map((label, i) => (
+            <div key={i} className="rounded-2xl border border-border bg-card p-5 text-center">
+              <span className="text-base font-medium">{label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* WHAT ENCORA PROVIDES / WHAT PARTNER PROVIDES */}
+      <section className="mx-auto max-w-6xl px-6 mt-24">
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 space-y-5">
+            <h3 className="text-xl font-semibold dark:text-white">What Encora provides</h3>
+            <ul className="space-y-3">
+              {[
+                "QR/RFID-enabled container tracking",
+                "Return verification workflow",
+                "Smart bin or assisted-return workflow",
+                "Operator dashboard and return records",
+                "Pilot reporting — return rate, loss rate, recovery",
+              ].map((item, i) => (
+                <li key={i} className="flex gap-3 items-start">
+                  <span className="mt-2 w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
+                  <span className="text-base text-muted-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-border bg-card p-8 space-y-5">
+            <h3 className="text-xl font-semibold dark:text-white">What the partner provides</h3>
+            <ul className="space-y-3">
+              {[
+                "Pilot location and space for hardware",
+                "Container pool or container approval",
+                "Dining or operator coordination",
+                "Washing plan for returned containers",
+                "Basic promotion to program participants",
+              ].map((item, i) => (
+                <li key={i} className="flex gap-3 items-start">
+                  <span className="mt-2 w-2 h-2 rounded-full bg-border flex-shrink-0" />
+                  <span className="text-base text-muted-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* PILOT METRICS */}
+      <section className="mx-auto max-w-6xl px-6 mt-24">
+        <h2 className="text-center heading-lg mb-4 dark:text-white">Pilot metrics we track together</h2>
+        <p className="text-center text-base text-muted-foreground mb-10 max-w-xl mx-auto">
+          Every pilot produces a shared report across these dimensions.
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {[
+            { label: "Return rate", desc: "% of containers returned in the period" },
+            { label: "Container loss rate", desc: "Containers not returned after X days" },
+            { label: "Verified check-ins", desc: "Returns with a complete intake record" },
+            { label: "Late returns", desc: "Returns past expected window" },
+            { label: "Manual staff touchpoints", desc: "Incidents requiring staff intervention" },
+            { label: "Reminder effectiveness", desc: "Return rate lift after automated nudges" },
+            { label: "Recovery rate", desc: "Containers recovered after loss alert" },
+          ].map((m, i) => (
+            <div key={i} className="rounded-2xl border border-border bg-card p-5 space-y-1">
+              <p className="font-semibold text-sm dark:text-white">{m.label}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed">{m.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -189,10 +302,10 @@ export default function EncoraReuseV2() {
       <section className="mx-auto max-w-6xl mt-24 mb-24 px-6">
         <div className="rounded-3xl bg-emerald-600 text-white p-10 md:p-14 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold">
-            Ready to launch a reuse program?
+            Explore a reuse pilot
           </h2>
           <p className="mt-3 text-base text-emerald-100 max-w-lg mx-auto">
-            Talk to our team about a pilot at your campus or venue.
+            Whether you're running a campus dining program, city initiative, or food hall — we're evaluating select reuse pilot partners. Let's talk.
           </p>
           <div className="mt-8">
             <Link

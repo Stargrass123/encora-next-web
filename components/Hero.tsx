@@ -105,19 +105,19 @@ export default function HeroSection() {
               onClick={() =>
                 pushToDataLayer({
                   event: "hero_cta_click",
-                  button_text: "Talk to us",
+                  button_text: "Request a Pilot Conversation",
                   page_path: "/",
                 })
               }
               className="rounded-2xl px-6 py-3 font-semibold bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-200"
             >
-              Talk to us
+              Request a Pilot Conversation
             </Link>
             <Link
-              href="/bin"
+              href="/solutions"
               className="inline-flex rounded-2xl px-6 py-3 font-semibold items-center justify-center border-2 border-white text-white hover:bg-white/10 transition-all duration-200"
             >
-              See the Bin
+              View Platform
             </Link>
           </motion.div>
         </div>

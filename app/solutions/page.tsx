@@ -34,7 +34,7 @@ export default function SolutionsPage() {
               Smart return infrastructure
             </h1>
             <p className="text-lg text-white/80 leading-relaxed">
-              Four building blocks that work together or stand alone — plug Encora into retail, campuses, packaging EPR, and events without replatforming.
+              Four building blocks that work together or stand alone — plug Encora into retail, campuses, packaging recovery, and events without replatforming.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <Link

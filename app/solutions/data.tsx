@@ -38,7 +38,7 @@ export const MODULES = [
         subtitle: "APIs & webhooks",
         bullets: [
             "Push events into POS, OMS, or campus card systems",
-            "Exportable data for EPR, ESG, and internal reporting",
+            "Exportable structured data for operations and internal reporting",
         ],
         Icon: ConnectIcon,
     },
@@ -74,15 +74,15 @@ export const ENVIRONMENTS = [
         imageAlt: "Customer returning items in a retail store",
     },
     {
-        key: "epr",
-        title: "Packaging EPR",
+        key: "packaging",
+        title: "Packaging & Recovery",
         bullets: [
-            "Evidence-grade data for EPR and stewardship reporting",
+            "Evidence-grade data for packaging stewardship and recovery reporting",
             "Granular insights across bins, locations, and materials",
             "Modular, neutral infrastructure usable by multiple brands",
         ],
-        cta: "See EPR compliance workflow",
-        href: "/contact-us?context=solutions-epr",
+        cta: "See packaging recovery workflow",
+        href: "/contact-us?context=solutions-packaging",
         imageSrc:
             "/images/warehouse-industrial-building-interior-with-people-forklifts-handling-goods-storage-area.jpg",
         imageAlt: "Warehouse and packaging environment",

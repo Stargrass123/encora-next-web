@@ -150,10 +150,10 @@ export default function AboutPage() {
       <section className="mx-auto max-w-6xl mt-24 px-6">
         <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 md:p-10 text-center">
           <h2 className="heading-lg mb-4 dark:text-white">
-            Built for compliance and audit
+            Built for audit-ready return records
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Every return event is logged with photo evidence, timestamps, and structured data—ready for internal audit, chargeback disputes, or EPR reporting without custom integrations.
+            Every return event is logged with photo evidence, timestamps, and structured data—ready for internal audit and chargeback disputes without custom integrations.
           </p>
         </div>
       </section>
@@ -165,16 +165,16 @@ export default function AboutPage() {
         </h2>
         <article className="rounded-2xl border border-border bg-card p-8 md:p-10 space-y-5 text-base text-muted-foreground leading-relaxed">
           <p>
-            Encora started in the circular economy—building smart bins and traceability tools for reuse programs at campuses, restaurants, and public venues. The goal was simple: make it possible to run a reuse program without the spreadsheets.
+            Encora began by solving one of the hardest problems in reuse: getting physical items back reliably. We built smart bins and traceability tools for reuse programs at campuses, restaurants, and public venues—the goal was simple: make it possible to run a reuse program without the spreadsheets.
           </p>
           <p>
-            What we found doing those early pilots changed the direction of the company. Every operator we worked with had the same problem underneath the reuse question: <em>they couldn't prove what came back</em>. Reusable containers, retail merchandise, or returned goods—the moment of drop-off was a black hole. Items went in, but there was no reliable record of what they were, when they arrived, or whether they matched what was expected.
+            That work exposed a broader infrastructure gap. Every operator we worked with had the same problem underneath the reuse question: <em>they couldn't prove what came back</em>. Reusable containers, retail merchandise, or returned goods—the moment of drop-off was a black hole. Items went in, but there was no reliable record of what they were, when they arrived, or whether they matched what was expected.
           </p>
           <p>
-            That's when we pivoted to verification. The same hardware and software we built for reuse intake—kiosks, weight sensors, computer vision—turned out to be exactly what retail returns needed. We focused the platform on one thing: creating a tamper-evident record at the moment of drop-off.
+            That insight led us to pivot to verification. The same hardware and software we built for reuse intake—kiosks, weight sensors, computer vision—turned out to be exactly what retail returns needed. We focused the platform on one thing: creating a tamper-evident record at the moment of drop-off.
           </p>
           <p>
-            Encora is now a returns verification platform. We're accepting our first retail pilot partners in 2025, with hardware deployed and integrations with major POS and OMS systems underway.
+            Today, Encora is focused on verified retail return intake through RetAI, while continuing to support select reuse pilots through Encora Reuse. We're evaluating select 2026 pilot partners, with hardware deployed and integrations with major POS and OMS systems underway.
           </p>
         </article>
       </section>
@@ -197,7 +197,7 @@ export default function AboutPage() {
             />
             <TimelineItem
               year="2025"
-              text="Launched pilot program for apparel retailers, mall operators, and 3PL partners. Now accepting first pilot cohort."
+              text="Began evaluating retail pilot partners with apparel retailers, mall operators, and 3PL partners. Now accepting select 2026 pilot conversations."
             />
           </div>
         </div>
@@ -230,14 +230,14 @@ export default function AboutPage() {
             Ready to verify your returns?
           </h2>
           <p className="mt-3 text-base text-emerald-100 max-w-lg mx-auto">
-            We're accepting pilot partners now. Talk to us about your locations and volume.
+            We're evaluating select 2026 pilot partners. Talk to us about your locations and volume.
           </p>
           <div className="mt-8">
             <Link
               href="/contact-us"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
             >
-              Request a pilot
+              Request a Pilot Conversation
             </Link>
           </div>
         </div>

@@ -31,7 +31,7 @@ export default function BinPage() {
                             The Smart Return Bin
                         </h1>
                         <p className="text-lg text-white/80 leading-relaxed">
-                            Contactless, verified returns — with on-bin guidance and instant confirmation.
+                            Controlled intake, verified at drop-off — with on-bin guidance, structured return records, and instant customer confirmation.
                         </p>
                         <div className="flex flex-wrap gap-4 pt-2">
                             <Link

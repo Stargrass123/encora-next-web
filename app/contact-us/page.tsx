@@ -172,7 +172,7 @@ export default function ContactForm() {
               <option value="returns">
                 Retail returns / Encora Access (RetAI)
               </option>
-              <option value="compliance">Compliance, EPR, or reporting</option>
+              <option value="packaging">Packaging recovery or stewardship</option>
               <option value="general">General inquiry</option>
             </select>
             {formik.touched.useCase && formik.errors.useCase && (
