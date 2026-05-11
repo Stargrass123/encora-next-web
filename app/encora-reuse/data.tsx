@@ -10,13 +10,13 @@ export const threeSteps = [
     },
     {
         img: "/images/three step photo.png",
-        title: "Auto-open return",
-        sub: "UHF RFID detects the tag and opens the correct slot.",
+        title: "Return",
+        sub: "Tagged containers are brought to the bin; RFID or QR identifies the container and links it back to the user.",
     },
     {
         img: "/images/three step reuse step 3.png",
         title: "Verified check-in",
-        sub: "Door auto-locks; bin records photo + weight; optional reason.",
+        sub: "Tagged containers are checked in, marked as returned, and cleared from the user's account.",
     },
 ];
 
@@ -51,18 +51,18 @@ export const howSteps = [
     },
     {
         icon: <BinIcon />,
-        title: "Return (Unlock)",
-        body: "Approach bin → UHF RFID detects tag → door auto-opens correct slot.",
+        title: "Return",
+        body: "Container is brought to the bin or assisted-return point; RFID or QR identifies the container.",
     },
     {
         icon: <VerifyIcon />,
-        title: "Capture (Camera)",
-        body: "Door auto-locks; bin snaps photos and measures weight; optional reason code.",
+        title: "Verified check-in",
+        body: "Container is marked returned and cleared from the user's account. Late-return status resolved automatically.",
     },
     {
         icon: <VerifyIcon />,
-        title: "Resolve (RetAI)",
-        body: "Rules choose instant refund or queue for review based on evidence.",
+        title: "Operator record",
+        body: "Return event logged to operator dashboard. Reminders, recovery alerts, and reporting updated in real time.",
     },
     {
         icon: <ConnectIcon />,

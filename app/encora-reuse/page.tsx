@@ -271,7 +271,7 @@ export default function EncoraReuseV2() {
             </p>
             <div className="space-y-5">
               {[
-                { title: "Evidence at drop", desc: "Eliminates disputes and accelerates refunds — photo and weight captured automatically." },
+                { title: "Verified return records", desc: "Every return is logged with a timestamp and container status — operator can use records for reminders, refunds, and recovery." },
                 { title: "Ops telemetry", desc: "Surfaces late returns, hotspots, and operational risk in real time." },
                 { title: "API-first architecture", desc: "Integrates with campus systems (Transact, Atrium, TouchNet, CBORD, Dine On) via webhooks — no rip-and-replace." },
               ].map((item, i) => (
@@ -291,7 +291,7 @@ export default function EncoraReuseV2() {
           <div className="rounded-2xl border border-border bg-card p-4 overflow-hidden">
             <ImageWithFallback
               src="/images/verify-evidence-feed_updated.jpeg"
-              alt="Encora evidence feed with photo, weight, reason and status"
+              alt="Encora operator dashboard showing return records and container status"
               className="w-full rounded-xl object-cover"
             />
           </div>
@@ -309,10 +309,10 @@ export default function EncoraReuseV2() {
           </p>
           <div className="mt-8">
             <Link
-              href="/contact-us"
+              href="/contact-us?context=reuse-pilot"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
             >
-              Talk to us
+              Talk to Us About a Reuse Pilot
             </Link>
           </div>
         </div>
