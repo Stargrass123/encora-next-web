@@ -34,7 +34,7 @@ export default function HeroSection() {
       {/* Full bleed background image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/hero-revamp.jpg"
+          src="/images/hero-revamp-new.jpeg"
           alt="Woman returning item to Encora RetAI kiosk in mall"
           fill
           priority
