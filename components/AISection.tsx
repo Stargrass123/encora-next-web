@@ -12,7 +12,7 @@ const AISection = () => {
     {
       title: "No Staff Needed",
       description:
-        "The entire return process is automated. Customers self-serve in under 60 seconds. Staff are freed from the service desk entirely.",
+        "The return process is designed to be fully automated — the same kiosk architecture already runs automated reuse returns in our live programs today. Customers self-serve in under 60 seconds.",
       icon: <FileCheck className="w-5 h-5 dark:text-encora-green-dark" />,
       stat: "$29 avg per return",
     },
@@ -21,7 +21,7 @@ const AISection = () => {
       description:
         "Every return becomes a structured data event — what came back, in what condition, from whom. That data drives smarter inventory, routing, and recovery decisions.",
       icon: <ChartLine className="w-5 h-5 dark:text-encora-green-dark" />,
-      stat: "0% verified today",
+      stat: "The missing layer",
     },
   ];
 

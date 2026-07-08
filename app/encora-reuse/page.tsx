@@ -314,7 +314,7 @@ export default function EncoraReuseV2() {
             Explore a reuse pilot
           </h2>
           <p className="mt-3 text-base text-emerald-100 max-w-lg mx-auto">
-            Whether you're running a campus dining program, city initiative, or food hall — we're evaluating select reuse pilot partners. Let's talk.
+            Our reuse programs are live at campuses and commercial sites today. Whether you're running a campus dining program, city initiative, or food hall — we partner with new operators. Let's talk.
           </p>
           <div className="mt-8">
             <Link

@@ -57,7 +57,7 @@ export default function HeroSection() {
             variants={itemVariants}
             className="text-encora-mint text-sm sm:text-base font-semibold uppercase tracking-widest mb-4"
           >
-            Retail Return Verification
+            Verified Return Infrastructure
           </motion.p>
 
           {/* Headline */}
@@ -74,8 +74,9 @@ export default function HeroSection() {
             variants={itemVariants}
             className="text-white/80 text-lg sm:text-xl leading-relaxed mb-10"
           >
-            Encora RetAI verifies every return at intake — reducing fraud,
-            cutting labor, and capturing data retailers can&apos;t get today.
+            Encora builds verified infrastructure for returns and reuse —
+            reusable packaging tracking running live today, with RetAI, our
+            retail return verification platform, as the next frontier.
           </motion.p>
 
           {/* Stats row */}
@@ -84,9 +85,9 @@ export default function HeroSection() {
             className="flex flex-wrap gap-8 mb-10"
           >
             {[
-              { stat: "$101B", label: "Annual return fraud" },
-              { stat: "$29", label: "Avg cost per return" },
-              { stat: "0%", label: "Verified at handoff today" },
+              { stat: "$101B", label: "Annual return fraud industry-wide" },
+              { stat: "$29", label: "Avg industry cost per return" },
+              { stat: "Verified", label: "The missing layer in retail returns" },
             ].map((item, i) => (
               <div key={i}>
                 <div className="text-2xl font-bold text-encora-mint">{item.stat}</div>
@@ -105,13 +106,13 @@ export default function HeroSection() {
               onClick={() =>
                 pushToDataLayer({
                   event: "hero_cta_click",
-                  button_text: "Request a Pilot Conversation",
+                  button_text: "Talk to Us",
                   page_path: "/",
                 })
               }
               className="rounded-2xl px-6 py-3 font-semibold bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-200"
             >
-              Request a Pilot Conversation
+              Talk to Us
             </Link>
             <Link
               href="/solutions"

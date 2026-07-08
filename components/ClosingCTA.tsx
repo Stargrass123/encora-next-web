@@ -5,20 +5,23 @@ export default function ClosingCTA() {
     <section className="bg-[#194C4D] text-white py-24 px-4 sm:px-8 md:px-16 lg:px-24">
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-encora-mint text-sm font-semibold uppercase tracking-widest mb-4">
-          Now Evaluating Select 2026 Pilot Partners
+          Where We&apos;re Headed
         </p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
           Ready to verify your returns?
         </h2>
         <p className="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto mb-10">
-          We're evaluating select 2026 retail pilot partners in the Seattle Metro area. If you run a high-return retail operation and want verified intake without the labor cost — let's talk.
+          RetAI is our vision for verified retail returns — built on the same
+          infrastructure already running in our reuse programs today. If
+          you&apos;re exploring what verified intake could look like for your
+          operation, we&apos;d like to hear from you.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <Link
             href="/contact-us"
             className="rounded-2xl px-8 py-4 font-semibold bg-emerald-500 hover:bg-emerald-400 text-white shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
           >
-            Request a Pilot Conversation
+            Get in Touch
           </Link>
           <Link
             href="/bin"

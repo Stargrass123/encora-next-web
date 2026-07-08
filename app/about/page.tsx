@@ -174,7 +174,7 @@ export default function AboutPage() {
             That insight led us to pivot to verification. The same hardware and software we built for reuse intake—kiosks, weight sensors, computer vision—turned out to be exactly what retail returns needed. We focused the platform on one thing: creating a tamper-evident record at the moment of drop-off.
           </p>
           <p>
-            Today, Encora is focused on verified retail return intake through RetAI, while continuing to support select reuse pilots through Encora Reuse. We're evaluating select 2026 pilot partners, with hardware deployed and integrations with major POS and OMS systems underway.
+            Today, Encora operates live reuse installations through Encora Reuse, with hardware deployed and programs running. RetAI — our patent-pending platform for verified retail return intake — is where we&apos;re taking that same verification layer next.
           </p>
         </article>
       </section>
@@ -197,7 +197,7 @@ export default function AboutPage() {
             />
             <TimelineItem
               year="2025"
-              text="Began evaluating retail pilot partners with apparel retailers, mall operators, and 3PL partners. Now accepting select 2026 pilot conversations."
+              text="Developed the RetAI platform vision and go-to-market for verified retail returns, while continuing to operate live reuse programs."
             />
           </div>
         </div>
@@ -230,14 +230,14 @@ export default function AboutPage() {
             Ready to verify your returns?
           </h2>
           <p className="mt-3 text-base text-emerald-100 max-w-lg mx-auto">
-            We're evaluating select 2026 pilot partners. Talk to us about your locations and volume.
+            RetAI is our vision for verified retail returns. If you're exploring what verified intake could look like for your operation, we'd like to hear from you.
           </p>
           <div className="mt-8">
             <Link
               href="/contact-us"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
             >
-              Request a Pilot Conversation
+              Get in Touch
             </Link>
           </div>
         </div>
