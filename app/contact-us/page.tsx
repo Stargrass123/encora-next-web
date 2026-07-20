@@ -10,6 +10,7 @@ export default function ContactForm() {
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [error, setError] = useState("");
+  const [formStart] = useState(() => Date.now());
 
   const formik = useFormik({
     initialValues: {
@@ -36,7 +37,7 @@ export default function ContactForm() {
         const res = await fetch("/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(values),
+          body: JSON.stringify({ ...values, elapsedMs: Date.now() - formStart }),
         });
 
         if (!res.ok) throw new Error("Failed to send");
@@ -95,6 +96,8 @@ export default function ContactForm() {
             className="hidden"
             tabIndex={-1}
             autoComplete="off"
+            value={formik.values.company}
+            onChange={formik.handleChange}
           />
 
           <div>
