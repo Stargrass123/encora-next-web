@@ -11,8 +11,8 @@ export default function ClosingCTA() {
           Ready to verify your returns?
         </h2>
         <p className="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto mb-10">
-          RetAI is our vision for verified retail returns — built on the same
-          infrastructure already running in our reuse programs today. If
+          RetAI is a potential future direction; not validated or deployed for retail returns. It builds on
+          the kiosk hardware proven in our reuse pilots. If
           you&apos;re exploring what verified intake could look like for your
           operation, we&apos;d like to hear from you.
         </p>

@@ -36,7 +36,7 @@ export default function EncoraAccessPage() {
               Keep the customer.
             </h1>
             <p className="text-lg text-white/80 leading-relaxed">
-              RetAI turns your manual returns desk into a self-serve, verified drop point. Cut labor, shrink lines, and capture proof of every return.
+              RetAI could turn a manual returns desk into a self-serve, verified drop point. RetAI is a potential future direction; not validated or deployed for retail returns.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <Link
@@ -74,7 +74,7 @@ export default function EncoraAccessPage() {
         <div className="text-center mb-12 space-y-3">
           <h2 className="heading-lg dark:text-white">How RetAI works</h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            Works alongside your existing POS — no rip-and-replace.
+            Could work alongside your existing POS.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-4">
@@ -141,7 +141,7 @@ export default function EncoraAccessPage() {
               <li>60-second self-serve flow, no staff needed</li>
               <li>Photo + weight captured at drop</li>
               <li>Tamper-evident record per transaction</li>
-              <li>Fraud flagged before refund is issued</li>
+              <li>Fraud could be flagged before refund is issued</li>
             </ul>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function EncoraAccessPage() {
               dot: "bg-emerald-500",
               items: [
                 "Every return verified, not anonymous",
-                "Flags repeat abuse patterns automatically",
+                "Could flag repeat abuse patterns",
                 "Full photo + timestamp audit trail per item",
               ],
             },

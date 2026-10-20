@@ -134,7 +134,7 @@ export default function SolutionsPage() {
             {
               step: "02",
               title: "Verify",
-              desc: "RetAI captures photo and weight at the moment of drop. Flags wrong items, empty boxes, and policy violations.",
+              desc: "RetAI would capture photo and weight at drop and could flag wrong items, empty boxes and policy violations.",
               icon: "✓",
             },
             {
@@ -146,7 +146,7 @@ export default function SolutionsPage() {
             {
               step: "04",
               title: "Route",
-              desc: "Structured data pushes to your POS, OMS, or logistics system via webhook. Refund holds release automatically on pass.",
+              desc: "Structured data could be sent to your POS, OMS or logistics system, which would make the refund decision.",
               icon: "→",
             },
           ].map((item, i) => (
@@ -182,7 +182,7 @@ export default function SolutionsPage() {
               title: "Apparel & specialty retailers",
               bullets: [
                 "Reduce $29/return processing cost",
-                "Cut fraud with verified intake before refund",
+                "Could cut fraud with verified intake before refund",
                 "Self-serve kiosks free up staff for selling",
                 "Data that routes items to restock, resale, or RTV",
               ],
@@ -202,7 +202,7 @@ export default function SolutionsPage() {
                 "Verified intake data before items reach the DC",
                 "Reduce surprises in the returns processing queue",
                 "Photo and weight records for dispute resolution",
-                "API integration with your WMS and OMS",
+                "Possible future integration with WMS and OMS",
               ],
             },
           ].map((col, i) => (

@@ -3,19 +3,19 @@ const Solutions = () => {
     {
       title: "Apparel Retailers",
       description:
-        "High return volumes, tight margins, and growing fraud exposure. RetAI gives apparel retailers verified intake and automated routing at every location.",
+        "High return volumes, tight margins, and growing fraud exposure. RetAI could give apparel retailers verified intake at each location.",
       icon: "👗",
     },
     {
       title: "Mall & Hub Operators",
       description:
-        "One Encora hub can serve multiple retailers in a single location — increasing utilization and creating a new revenue stream for property owners.",
+        "One Encora hub could serve multiple retailers in a single location, creating a possible new revenue stream for property owners.",
       icon: "🏬",
     },
     {
       title: "Logistics & 3PL Partners",
       description:
-        "Cleaner intake data means better downstream decisions. RetAI integrates with existing logistics systems to route items to restock, resale, or recycle.",
+        "Cleaner intake data means better downstream decisions. RetAI could connect to logistics systems to help route items to restock, resale or recycle.",
       icon: "📦",
     },
   ];

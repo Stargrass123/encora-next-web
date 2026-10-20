@@ -24,7 +24,7 @@ export const HOW_STEPS = [
     {
         icon: <TagsIcon />,
         title: "RetAI verifies & captures",
-        body: "Confirms eligibility, imports return details, captures a photo, verifies weight, and flags exceptions.",
+        body: "Would confirm eligibility, capture a photo, check weight and flag exceptions.",
     },
     {
         icon: <VerifyIcon />,

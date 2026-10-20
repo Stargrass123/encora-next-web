@@ -5,21 +5,21 @@ const AISection = () => {
     {
       title: "Verified at Intake",
       description:
-        "RetAI confirms item identity and condition the moment it enters the chamber — before any refund is issued. No more empty boxes, worn items, or SKU swaps.",
+        "RetAI would check item identity and condition when it enters the chamber, before a refund is issued, which could help catch empty boxes, worn items and SKU swaps.",
       icon: <BrainCircuit className="w-5 h-5 dark:text-encora-green-dark" />,
       stat: "$101B in fraud",
     },
     {
       title: "No Staff Needed",
       description:
-        "The return process is designed to be fully automated — the same kiosk architecture already runs automated reuse returns in our live programs today. Customers self-serve in under 60 seconds.",
+        "Drop-off would be self-service, building on the automated return kiosk we deployed in reuse pilots at San Diego International Airport and Chabot College.",
       icon: <FileCheck className="w-5 h-5 dark:text-encora-green-dark" />,
       stat: "$29 avg per return",
     },
     {
       title: "Data Retailers Can't Get Today",
       description:
-        "Every return becomes a structured data event — what came back, in what condition, from whom. That data drives smarter inventory, routing, and recovery decisions.",
+        "Every return would become a structured data event: what came back, in what condition, from whom. That data could support inventory, routing and recovery decisions.",
       icon: <ChartLine className="w-5 h-5 dark:text-encora-green-dark" />,
       stat: "The missing layer",
     },
@@ -31,7 +31,7 @@ const AISection = () => {
         <div className="text-center">
           <h2 className="heading-lg dark:text-white">The Missing Layer</h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-6xl mx-auto dark:text-white/80">
-            Retailers process millions of returns every year. Almost none are verified at the point of handoff. RetAI changes that.
+            Retailers process millions of returns every year. RetAI is a potential future direction; not validated or deployed for retail returns.
           </p>
         </div>
 

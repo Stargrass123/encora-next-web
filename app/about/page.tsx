@@ -94,7 +94,7 @@ export default function AboutPage() {
                 <li>Manual audits that can't scale across locations.</li>
               </ul>
               <p className="font-semibold text-base">
-                Encora puts a verification layer at the intake point—capturing photo, weight, and item data the moment the return is made.
+                Encora could put a verification layer at the intake point, capturing photo, weight and item data the moment the return is made. RetAI is a potential future direction; not validated or deployed for retail returns.
               </p>
             </div>
           </div>
@@ -126,8 +126,8 @@ export default function AboutPage() {
             <h3 className="text-lg font-semibold mb-4">Proof at drop-off</h3>
             <ul className="space-y-2.5 text-base text-muted-foreground list-disc pl-4">
               <li>Photo and timestamp captured at the moment of return.</li>
-              <li>Weight and item validation before acceptance.</li>
-              <li>Automatic flags for wrong items and empty boxes.</li>
+              <li>Would validate weight and item before acceptance.</li>
+              <li>Could flag wrong items and empty boxes.</li>
               <li>Tamper-evident record stored per transaction.</li>
             </ul>
           </article>
@@ -137,9 +137,9 @@ export default function AboutPage() {
             </div>
             <h3 className="text-lg font-semibold mb-4">Connected data</h3>
             <ul className="space-y-2.5 text-base text-muted-foreground list-disc pl-4">
-              <li>Works alongside your existing POS and OMS.</li>
-              <li>APIs and webhooks for system-to-system routing.</li>
-              <li>Refund holds until verification is complete.</li>
+              <li>Could work alongside your POS and OMS.</li>
+              <li>APIs and webhooks for routing would be developed.</li>
+              <li>Refunds could be held until verification is complete.</li>
               <li>Audit-ready reporting across all locations.</li>
             </ul>
           </article>
@@ -153,7 +153,7 @@ export default function AboutPage() {
             Built for audit-ready return records
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Every return event is logged with photo evidence, timestamps, and structured data—ready for internal audit and chargeback disputes without custom integrations.
+            Every return event would be logged with photo evidence, timestamps and structured data for internal audit and chargeback disputes.
           </p>
         </div>
       </section>
@@ -171,10 +171,10 @@ export default function AboutPage() {
             That work exposed a broader infrastructure gap. Every operator we worked with had the same problem underneath the reuse question: <em>they couldn't prove what came back</em>. Reusable containers, retail merchandise, or returned goods—the moment of drop-off was a black hole. Items went in, but there was no reliable record of what they were, when they arrived, or whether they matched what was expected.
           </p>
           <p>
-            That insight led us to pivot to verification. The same hardware and software we built for reuse intake—kiosks, weight sensors, computer vision—turned out to be exactly what retail returns needed. We focused the platform on one thing: creating a tamper-evident record at the moment of drop-off.
+            That insight led us to pivot to verification. The kiosk hardware and software we built for reuse intake could also serve retail returns, by creating a tamper-evident record at the moment of drop-off.
           </p>
           <p>
-            Today, Encora operates live reuse installations through Encora Reuse, with hardware deployed and programs running. RetAI — our patent-pending platform for verified retail return intake — is where we&apos;re taking that same verification layer next.
+            Encora&apos;s reuse platform has run in pilots at Seattle Municipal Tower, San Diego International Airport and Chabot College, and supports reuse events with the City of Seattle. RetAI is patent pending. RetAI is a potential future direction; not validated or deployed for retail returns.
           </p>
         </article>
       </section>
@@ -184,20 +184,20 @@ export default function AboutPage() {
         <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 md:p-10">
           <div className="space-y-8 border-l-2 border-emerald-500/40 pl-8">
             <TimelineItem
-              year="2022"
-              text="Founded to solve traceability in reuse programs. Deployed first smart bins on campuses and at public venues."
+              year="2019"
+              text="Ran our first reuse tracking program at Seattle Municipal Tower with Seattle Public Utilities and CBRE, as Green GrubBox."
+            />
+            <TimelineItem
+              year="2021"
+              text="Founded Encora Enterprises. Built automated RFID return kiosks, piloted at San Diego International Airport and Chabot College."
             />
             <TimelineItem
               year="2023"
-              text="Expanded hardware with weight sensors and computer vision. Identified the same intake verification gap across retail returns."
+              text="Joined the LACI incubator (completed 2025) and developed an outdoor smart bin with its Advanced Prototyping Center."
             />
             <TimelineItem
-              year="2024"
-              text="Pivoted to retail returns verification. Developed RetAI—the AI layer that validates items at drop-off. Filed patents on intake verification hardware and workflow."
-            />
-            <TimelineItem
-              year="2025"
-              text="Developed the RetAI platform vision and go-to-market for verified retail returns, while continuing to operate live reuse programs."
+              year="Now"
+              text="Exploring RetAI for retail returns. Patent pending. RetAI is a potential future direction; not validated or deployed for retail returns."
             />
           </div>
         </div>

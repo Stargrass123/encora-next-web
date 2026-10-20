@@ -14,7 +14,7 @@ const ResultsBand = () => {
             What Retailers Gain
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground font-light max-w-2xl mx-auto dark:text-white">
-            RetAI doesn't just process returns — it transforms them into a verified, data-rich operation.
+            What RetAI could deliver. RetAI is a potential future direction; not validated or deployed for retail returns.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
