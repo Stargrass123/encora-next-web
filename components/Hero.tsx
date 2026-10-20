@@ -74,9 +74,9 @@ export default function HeroSection() {
             variants={itemVariants}
             className="text-white/80 text-lg sm:text-xl leading-relaxed mb-10"
           >
-            Encora builds verified infrastructure for returns and reuse —
-            reusable packaging tracking running live today, with RetAI, our
-            retail return verification platform, as the next frontier.
+            Encora builds infrastructure for returns and reuse, proven in
+            reusable container pilots with Seattle Public Utilities, San Diego
+            International Airport and Chabot College. RetAI is a potential future direction; not validated or deployed for retail returns.
           </motion.p>
 
           {/* Stats row */}

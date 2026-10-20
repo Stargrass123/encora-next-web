@@ -37,7 +37,7 @@ export const MODULES = [
         title: "Connect",
         subtitle: "APIs & webhooks",
         bullets: [
-            "Push events into POS, OMS, or campus card systems",
+            "Exportable return events for reporting",
             "Exportable structured data for operations and internal reporting",
         ],
         Icon: ConnectIcon,
@@ -63,7 +63,7 @@ export const ENVIRONMENTS = [
         key: "retail",
         title: "Retail & apparel",
         bullets: [
-            "Shrink and fraud reduction with proof at drop",
+            "Could reduce shrink and fraud with proof at drop",
             "Shorter lines with self-service returns kiosks",
             "Data that routes items to reuse, resale, or recycling",
         ],

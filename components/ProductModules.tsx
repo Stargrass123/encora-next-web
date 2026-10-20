@@ -6,28 +6,28 @@ const ProductModules = () => {
       step: "01",
       title: "Scan",
       description:
-        "Customer scans their return authorization QR code at the kiosk — no staff required.",
+        "The customer would scan their return authorization QR code at the kiosk.",
       icon: BinIcon,
     },
     {
       step: "02",
       title: "Place",
       description:
-        "Item is placed into the controlled intake chamber. The door closes and verification begins.",
+        "The item would be placed into the controlled intake chamber, and the door would close before checks begin.",
       icon: TagsIcon,
     },
     {
       step: "03",
       title: "Verify",
       description:
-        "RetAI uses weight, imaging, and rules to confirm item identity and condition in seconds.",
+        "RetAI could use weight, imaging and rules to check item identity and condition.",
       icon: VerifyIcon,
     },
     {
       step: "04",
       title: "Route",
       description:
-        "Return is confirmed, refund triggered, and item routed to restock, resale, or recycle.",
+        "Results could then inform the retailer's refund and routing decisions.",
       icon: ConnectIcon,
     },
   ];
@@ -40,7 +40,7 @@ const ProductModules = () => {
             How It Works
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground mx-auto dark:text-white/80">
-            Four steps. Zero staff. Every return verified at intake.
+            RetAI is a potential future direction; not validated or deployed for retail returns.
           </p>
         </div>
 

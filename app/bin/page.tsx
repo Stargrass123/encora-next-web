@@ -56,7 +56,7 @@ export default function BinPage() {
                 <div className="text-center mb-12 space-y-3">
                     <h2 className="heading-lg dark:text-white">How it works</h2>
                     <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-                        A simple flow that works alongside your existing POS — no rip-and-replace.
+                        A simple flow that could work alongside a retailer's POS.
                     </p>
                 </div>
                 <div className="grid gap-6 md:grid-cols-3">
@@ -65,7 +65,7 @@ export default function BinPage() {
                             step: "01",
                             icon: <BinIcon />,
                             title: "Scan your item",
-                            body: "Scan or present your receipt to begin. The bin identifies your return and confirms it's expected.",
+                            body: "Scan or present your receipt to begin. The bin would identify your return and confirm it's expected.",
                         },
                         {
                             step: "02",
@@ -77,7 +77,7 @@ export default function BinPage() {
                             step: "03",
                             icon: <ConnectIcon />,
                             title: "Drop and go",
-                            body: "Secure drop-off with instant confirmation. RetAI captures photo and weight data at the moment of deposit.",
+                            body: "Secure drop-off with instant confirmation. RetAI would capture photo and weight data at the moment of deposit.",
                         },
                     ].map((step, i) => (
                         <article key={i} className="flex flex-col gap-4 rounded-2xl border border-border bg-card p-8">
@@ -108,8 +108,8 @@ export default function BinPage() {
                     <div className="space-y-6 order-2 md:order-1">
                         {[
                             { title: "Touchscreen display", desc: "On-bin guided instructions walk the customer through every step — no staff needed." },
-                            { title: "QR / barcode scanner", desc: "Scans order receipts or QR codes to identify and validate the return before the door opens." },
-                            { title: "Verified intake slot", desc: "Camera and weight sensor capture photo evidence and item weight at the exact moment of drop." },
+                            { title: "QR / barcode scanner", desc: "Scans QR codes to identify the item before the door opens." },
+                            { title: "Verified intake slot", desc: "A camera and weight sensor would capture photo evidence and item weight at the moment of drop." },
                             { title: "Secure storage compartment", desc: "Tamper-resistant lower compartment holds items safely until operator collection." },
                             { title: "IoT connected", desc: "Always-on connectivity streams return events to the operator dashboard in real time." },
                         ].map((item, i) => (
@@ -169,12 +169,12 @@ export default function BinPage() {
                                 Active returns infrastructure
                             </h2>
                             <p className="text-base text-muted-foreground leading-relaxed">
-                                Traditional return lockers are passive — they store items until someone manually retrieves them. The Encora Smart Return Bin is an <strong className="text-foreground dark:text-white">active participant</strong> in your reverse logistics network, initiating verification and routing the moment a return is made.
+                                Traditional return lockers are passive — they store items until someone manually retrieves them. The Encora Smart Return Bin is an <strong className="text-foreground dark:text-white">active participant</strong> in your reverse logistics network, which could initiate verification and routing the moment a return is made.
                             </p>
                         </div>
                         <div className="flex flex-col justify-between h-full gap-6">
                             <p className="text-base text-muted-foreground leading-relaxed">
-                                By reading encoded tags and communicating with our verification cloud, the bin ensures every return is legitimate, tracked, and ready for its next step — resale, recycling, or restocking.
+                                By reading encoded tags and communicating with our verification cloud, the bin would track each return and could help confirm it is ready for its next step: resale, recycling or restocking.
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <Link
@@ -199,10 +199,10 @@ export default function BinPage() {
                             <h3 className="text-lg font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Core capabilities</h3>
                             <ul className="space-y-6">
                                 {[
-                                    { title: "Real-time verification", desc: "Validates returned items against order records at the moment of drop-off." },
+                                    { title: "Real-time verification", desc: "Would validate returned items against order records at drop-off." },
                                     { title: "Contactless drop-off", desc: "Seamless customer experience — no staff intervention needed." },
                                     { title: "Secure storage", desc: "Anti-tamper design keeps items safe until collection." },
-                                    { title: "Data capture", desc: "Logs return volume, timing, item condition, and exception flags per transaction." },
+                                    { title: "Data capture", desc: "Logs return volume and timing; condition and exception flags would be added for retail." },
                                 ].map((item, i) => (
                                     <li key={i} className="flex gap-4">
                                         <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex-shrink-0 flex items-center justify-center text-emerald-600 mt-1">
@@ -222,7 +222,7 @@ export default function BinPage() {
                             <div className="grid sm:grid-cols-2 gap-4">
                                 {[
                                     { icon: <BinIcon />, title: "High capacity", desc: "Compact footprint, optimized for store floor deployment." },
-                                    { icon: <TagsIcon />, title: "QR + RFID + NFC", desc: "Compatible with major tag standards for broad POS integration." },
+                                    { icon: <TagsIcon />, title: "QR + RFID + NFC", desc: "Works with common tag standards." },
                                     { icon: <ConnectIcon />, title: "Always connected", desc: "IoT-enabled for continuous monitoring and alerts." },
                                     { icon: <VerifyIcon />, title: "Instant feedback", desc: "On-screen confirmation for customers and real-time operator dashboard." },
                                 ].map((item, i) => (
